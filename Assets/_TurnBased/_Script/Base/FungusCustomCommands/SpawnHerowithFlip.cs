@@ -35,6 +35,11 @@ namespace Fungus
         [Header("Hero Data")]
         [SerializeField] private ScriptableHero heroData;
 
+        [Header("NPC Data")]
+        [Tooltip("Masukkan ScriptableNPC agar NPC yang di-spawn punya data dialog/interaksi")]
+        [SerializeField] private ScriptableNPC npcData;
+        
+
         public override void OnEnter()
         {
             if (sourceObject == null)
@@ -42,6 +47,7 @@ namespace Fungus
                 Continue();
                 return;
             }
+
 
             GameObject newObject = Instantiate(sourceObject);
 
@@ -57,6 +63,12 @@ namespace Fungus
             else
             {
                 newObject.transform.position = customPosition;
+            }
+
+            NPCBase npcComponent = newObject.GetComponent<NPCBase>();
+            if (npcComponent != null && npcData != null)
+            {
+                npcComponent.SetData(npcData);
             }
 
             SpriteRenderer spawnedSpriteRenderer = newObject.GetComponentInChildren<SpriteRenderer>();

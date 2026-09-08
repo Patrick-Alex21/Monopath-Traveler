@@ -748,6 +748,13 @@ GameObject:
   - component: {fileID: 367243209}
   - component: {fileID: 367243210}
   - component: {fileID: 367243213}
+  - component: {fileID: 367243214}
+  - component: {fileID: 367243215}
+  - component: {fileID: 367243220}
+  - component: {fileID: 367243217}
+  - component: {fileID: 367243216}
+  - component: {fileID: 367243219}
+  - component: {fileID: 367243218}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -783,11 +790,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -137.35107, y: -49.202072}
+  scrollPos: {x: 14.915073, y: -40.68071}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 400
-  zoom: 1
+  blockViewHeight: 579
+  zoom: 0.85000014
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -795,9 +802,11 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243187}
-  selectedCommands: []
-  variables: []
+  - {fileID: 367243172}
+  selectedCommands:
+  - {fileID: 367243190}
+  variables:
+  - {fileID: 367243214}
   description: 
   stepPause: 0
   colorCommands: 1
@@ -837,7 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 118.59855
+    x: 115.069145
     y: 190.46379
     width: 138.12
     height: 40
@@ -1010,8 +1019,8 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 417.75507
-    y: 178.20207
-    width: 108.512
+    y: 177.0256
+    width: 108.520004
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1072,6 +1081,7 @@ MonoBehaviour:
   flipY: 0
   parentTransform: {fileID: 0}
   heroData: {fileID: 11400000, guid: bcef63a8d99a01d44bb831ccdf5e08e6, type: 2}
+  npcData: {fileID: 0}
 --- !u!114 &367243190
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1094,6 +1104,7 @@ MonoBehaviour:
   flipY: 0
   parentTransform: {fileID: 0}
   heroData: {fileID: 11400000, guid: c432f4de4bbfc8a4e9e4f40271770794, type: 2}
+  npcData: {fileID: 0}
 --- !u!114 &367243191
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1171,7 +1182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnHeroWithFlip
   itemId: 25
   indentLevel: 0
-  sourceObject: {fileID: 1280787349078759831, guid: 3a6414d42fc121f4daef930724540506, type: 3}
+  sourceObject: {fileID: 5735799645377753760, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
   spawnAtTransform: {fileID: 524767785}
   customPosition: {x: 0, y: 0, z: 0}
   customSprite: {fileID: -451098160, guid: 7a209d6013a742e4db6cea3ca75db4bc, type: 3}
@@ -1179,6 +1190,7 @@ MonoBehaviour:
   flipY: 0
   parentTransform: {fileID: 0}
   heroData: {fileID: 11400000, guid: c432f4de4bbfc8a4e9e4f40271770794, type: 2}
+  npcData: {fileID: 11400000, guid: 1db332e10ee5c324d9c5cf3e4e159a97, type: 2}
 --- !u!114 &367243195
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1193,7 +1205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnHeroWithFlip
   itemId: 26
   indentLevel: 0
-  sourceObject: {fileID: 1280787349078759831, guid: 3a6414d42fc121f4daef930724540506, type: 3}
+  sourceObject: {fileID: 5735799645377753760, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
   spawnAtTransform: {fileID: 2114159751}
   customPosition: {x: 0, y: 0, z: 0}
   customSprite: {fileID: -1538528932, guid: a0c7cb1aed3f3c44a8efa4e50202cb76, type: 3}
@@ -1201,6 +1213,7 @@ MonoBehaviour:
   flipY: 0
   parentTransform: {fileID: 0}
   heroData: {fileID: 11400000, guid: bcef63a8d99a01d44bb831ccdf5e08e6, type: 2}
+  npcData: {fileID: 11400000, guid: 2e0ec43288abdff49bdd695619c533ff, type: 2}
 --- !u!114 &367243196
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1576,6 +1589,186 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
+--- !u!114 &367243214
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 705fa1ac97df74e3a84ff952ffd923f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.FloatVariable
+  scope: 1
+  key: VARIABELTOLO
+  value: 0
+--- !u!114 &367243215
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 618.026
+    y: 168.91599
+    width: 115.79
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 44
+  blockName: TressaAfter
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 367243217}
+  - {fileID: 367243216}
+  suppressAllAutoSelections: 0
+--- !u!114 &367243216
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 47
+  indentLevel: 0
+  storyText: Lead the way, Alfyn! Next stop, the city!
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &367243217
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 46
+  indentLevel: 0
+  storyText: That fight really wore me out! I can't wait to get a proper rest at
+    the tavern.
+  description: 
+  character: {fileID: 930815035}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &367243218
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 49
+  indentLevel: 0
+  storyText: et's head back to town whenever you're ready, Alfyn.
+  description: 
+  character: {fileID: 419490295}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &367243219
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Say
+  itemId: 48
+  indentLevel: 0
+  storyText: The path to the city should be clear now, but stay on your guard.
+  description: 
+  character: {fileID: 419490295}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 1
+  waitForClick: 1
+  stopVoiceover: 1
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &367243220
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Fungus::Fungus.Block
+  nodeRect:
+    serializedVersion: 2
+    x: 775.673
+    y: 199.50421
+    width: 111.33
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 45
+  blockName: CyrusAfter
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 367243219}
+  - {fileID: 367243218}
+  suppressAllAutoSelections: 0
 --- !u!1 &388912010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1879,7 @@ Transform:
   m_GameObject: {fileID: 524767784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.56, y: 1.33, z: -1.55}
+  m_LocalPosition: {x: 1.28, y: 1.33, z: -1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1951,7 +2144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoPlayCutscene
   eventFlag: {fileID: 11400000, guid: bbb067de8055b42469bcca685a6913b7, type: 2}
-  prerequisiteFlag: {fileID: 11400000, guid: 1a6d31e6980276f479f17a1f7333d261, type: 2}
+  prerequisiteFlag: {fileID: 0}
   flowchart: {fileID: 367243170}
   blockName: EncounterParty
 --- !u!1 &679787301
@@ -5458,7 +5651,7 @@ Transform:
   m_GameObject: {fileID: 2114159750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.670002, y: 1.33, z: 1.2300043}
+  m_LocalPosition: {x: 0.16999817, y: 1.33, z: 1.2300043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

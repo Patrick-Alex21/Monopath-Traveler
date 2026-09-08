@@ -4116,18 +4116,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: -151.20923, y: -102.55733}
+  scrollPos: {x: -128.67337, y: -99.43165}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 389.6
-  zoom: 0.97
+  zoom: 0.94000006
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
+  selectedBlocks:
+  - {fileID: 367243172}
   selectedCommands: []
   variables: []
   description: 
@@ -4183,7 +4184,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 436.22415
     y: 164.66557
-    width: 145.448
+    width: 145.45
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4323,7 +4324,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 264.71814
     y: 164.78824
-    width: 93.76
+    width: 93.759995
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -19935,10 +19936,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: bc281f5ec26f8444db73b6ccb91740a8, type: 2}
-    - target: {fileID: 2514662537904884281, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_Radius
-      value: 0.73
-      objectReference: {fileID: 0}
     - target: {fileID: 2872718498560747713, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
       propertyPath: nameText
       value: Zeph
@@ -19962,26 +19959,6 @@ PrefabInstance:
     - target: {fileID: 5735799645377753760, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
       propertyPath: m_Name
       value: NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135274775002478766, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_Height
-      value: 1.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 8135274775002478766, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_Radius
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170050323404652127, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170050323404652127, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8170050323404652127, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8170050323404652127, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20098,10 +20075,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790762118946967365, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2790762118946967365, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5171163354108059510, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}

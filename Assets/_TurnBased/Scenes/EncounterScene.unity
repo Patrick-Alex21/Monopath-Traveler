@@ -696,8 +696,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243175}
-  selectedCommands: []
+  - {fileID: 367243184}
+  selectedCommands:
+  - {fileID: 367243197}
   variables: []
   description: 
   stepPause: 0
@@ -752,7 +753,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 139.40508
     y: 191.09235
-    width: 138.576
+    width: 138.57
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -828,7 +829,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 334.39743
     y: 193.88417
-    width: 106.856
+    width: 106.86
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -955,7 +956,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367243166}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 207aecf668a0345388087ccf522f9957, type: 3}
   m_Name: 
@@ -1204,7 +1205,7 @@ GameObject:
   - component: {fileID: 473614421}
   - component: {fileID: 473614422}
   m_Layer: 0
-  m_Name: '[[AfterFight_Cutscene]'
+  m_Name: '[AfterFight_Cutscene]'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

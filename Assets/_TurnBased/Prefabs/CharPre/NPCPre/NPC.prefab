@@ -247,7 +247,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.33
+  m_Radius: 1.46
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &8135274775002478766
 CapsuleCollider:
@@ -268,8 +268,8 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
-  m_Height: 0.34
+  m_Radius: 0.67
+  m_Height: 2.4
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2872718498560747713
@@ -357,11 +357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973414366513033734, guid: 8aa554cbe4dd64041a9252aa0f427fc5, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2973414366513033734, guid: 8aa554cbe4dd64041a9252aa0f427fc5, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2973414366513033734, guid: 8aa554cbe4dd64041a9252aa0f427fc5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -393,7 +393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973414366513033734, guid: 8aa554cbe4dd64041a9252aa0f427fc5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2973414366513033734, guid: 8aa554cbe4dd64041a9252aa0f427fc5, type: 3}
       propertyPath: m_AnchoredPosition.y

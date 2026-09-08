@@ -12,6 +12,13 @@ public class NPCBase : MonoBehaviour, IInteractable
         SetupFromData();
     }
 
+    // ==================== TAMBAHKAN METHOD INI ====================
+    public void SetData(ScriptableNPC newData)
+    {
+        _data = newData;
+        SetupFromData();
+    }
+
     private void SetupFromData()
     {
         if (_data == null) return;

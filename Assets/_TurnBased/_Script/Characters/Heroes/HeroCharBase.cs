@@ -66,7 +66,8 @@ public class HeroCharBase : CharacterBase
     public void ChangeBoostLevel(int newLevel)
     {
         int prevBoost = allocatedBoost;
-        allocatedBoost = Mathf.Clamp(newLevel, 0, BattleManager.MAX_BOOST);
+        int clamped = Mathf.Clamp(newLevel, 0, BattleManager.MAX_BOOST);
+        allocatedBoost = Mathf.Min(clamped, currentBP);
 
         if (BoostVFXManager.Instance != null)
         {

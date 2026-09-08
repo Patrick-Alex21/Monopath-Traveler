@@ -16,6 +16,7 @@ namespace Fungus
         {
             if (SceneTransitionManager.Instance != null)
             {
+                Debug.Log("Transitions");
                 SceneTransitionManager.Instance.TransitionToScene(targetSceneName, SpawnId.None); 
             }
             else
@@ -37,4 +38,4 @@ namespace Fungus
             return new Color32(200, 200, 200, 255); 
         }
     }
-}
+}   

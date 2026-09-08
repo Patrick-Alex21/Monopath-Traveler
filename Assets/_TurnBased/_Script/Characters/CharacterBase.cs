@@ -107,7 +107,8 @@ public class CharacterBase : MonoBehaviour, IDamageable
     public virtual void Heal(int amount)
     {
         Vector3 basePos = transform.position + new Vector3(0, 0.5f, 0);
-
+        currentHp = Mathf.Min(currentHp + amount, Stats.maxHp);
+        OnHealthChanged?.Invoke(currentHp, Stats.maxHp);
 
         if (DamagePopupPool.Instance != null)
         {

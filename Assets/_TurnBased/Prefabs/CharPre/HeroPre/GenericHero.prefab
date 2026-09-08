@@ -112,7 +112,6 @@ MonoBehaviour:
     ChosenSkill: {fileID: 0}
     Target: {fileID: 0}
     AllyTarget: {fileID: 0}
-    BoostAmount: 0
   _basicAttackSkill: {fileID: 11400000, guid: 7a11233e1b699d64380aea3f2a4e03dc, type: 2}
 --- !u!114 &8334395330016026495
 MonoBehaviour:
