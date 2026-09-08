@@ -9,18 +9,11 @@ public class GameManager : PersistentSingleton<GameManager>
 
     [Header("Player Data (Party)")]
     [SerializeField] private List<HeroType> currentParty = new List<HeroType>();
-        public List<HeroType> CurrentParty => currentParty; 
+    public List<HeroType> CurrentParty => currentParty; 
+    
     private void Start()
     {
         ChangeState(GameState.Exploring); 
-    }
-
-    private void Update()
-    {
-        if (SceneTransitionManager.Instance.isTransitioning)
-        {
-            return;
-        }
     }
     
     public void ChangeState(GameState newState)

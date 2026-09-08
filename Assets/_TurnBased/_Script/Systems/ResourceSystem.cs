@@ -54,10 +54,20 @@ public class ResourceSystem : Singleton<ResourceSystem>
 }           
 
     
-    public ScriptableHero GetHero(HeroType t) => _HeroesDict[t];
+    public ScriptableHero GetHero(HeroType t)
+    {
+        if (_HeroesDict.TryGetValue(t, out var hero)) return hero;
+        Debug.LogError($"[ResourceSystem] No ScriptableHero asset found for HeroType '{t}'. Did you forget to create one in Resources/Heroes?");
+        return null;
+    }
     public ScriptableHero GetRandomHero() => Heroes[Random.Range(0, Heroes.Count)];
 
     
-    public ScriptableEnemy GetEnemy(EnemyType t) => _EnemiesDict[t];
+    public ScriptableEnemy GetEnemy(EnemyType t)
+    {
+        if (_EnemiesDict.TryGetValue(t, out var enemy)) return enemy;
+        Debug.LogError($"[ResourceSystem] No ScriptableEnemy asset found for EnemyType '{t}'. Did you forget to create one in Resources/Enemies?");
+        return null;
+    }
     public ScriptableEnemy GetRandomEnemy() => Enemies[Random.Range(0, Enemies.Count)];
 }

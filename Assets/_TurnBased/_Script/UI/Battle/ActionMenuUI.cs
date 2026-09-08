@@ -152,7 +152,8 @@ public class ActionMenuUI : MonoBehaviour
 
         firstSelectedButton = null;
         GameObject buttonToSelect = null;
-        
+        ScriptableSkill firstAffordableSkill = null;
+
         _activeSkillButtons.Clear();
 
         if (CurrentHero != null)
@@ -185,7 +186,11 @@ public class ActionMenuUI : MonoBehaviour
                             btnComp.onClick.AddListener(() => OnSkillClicked(skill, btnComp)); 
                             _activeSkillButtons.Add(btnComp); 
                             
-                            if (firstSelectedButton == null) firstSelectedButton = newBtn;
+                            if (firstSelectedButton == null)
+                            {
+                                firstSelectedButton = newBtn;
+                                firstAffordableSkill = skill;
+                            }
                             if (skill.skillName == lastIntent) buttonToSelect = newBtn; 
                         }
 
@@ -233,12 +238,11 @@ public class ActionMenuUI : MonoBehaviour
                 firstSelectedButton.GetComponent<Button>().Select(); 
                 HighlightSelectedButton(firstSelectedButton.GetComponent<Button>());
                 
-                if (CurrentHero.skills.Count > 0)
+                if (firstAffordableSkill != null)
                 {
-                    ScriptableSkill firstSkill = CurrentHero.skills[0];
-                    selectedSkill = firstSkill;
-                    CurrentHeroUnit.CurrentIntent.ChosenSkill = firstSkill;
-                    if (casterPanel != null) casterPanel.SetIntentText(firstSkill.skillName);
+                    selectedSkill = firstAffordableSkill;
+                    CurrentHeroUnit.CurrentIntent.ChosenSkill = firstAffordableSkill;
+                    if (casterPanel != null) casterPanel.SetIntentText(firstAffordableSkill.skillName);
                 }
             }
         }
@@ -442,10 +446,9 @@ public class ActionMenuUI : MonoBehaviour
             else selectAllyPanel.HideAllyPanel();
         }
 
-        if (BattleManager.Instance != null)
+        if (BattleManager.Instance != null && BattleManager.Instance.TargetingSystem != null)
         {
-            TargetingSystem ts = FindObjectOfType<TargetingSystem>();
-            if (ts != null) ts.blockWorldClick = active;
+            BattleManager.Instance.TargetingSystem.blockWorldClick = active;
         }
 
         SetCommandHolderInteractable(!active);

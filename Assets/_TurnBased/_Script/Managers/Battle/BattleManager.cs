@@ -13,6 +13,13 @@ public class BattleManager : Singleton<BattleManager>
 
     [Header("Systems References")]
     [SerializeField] private TargetingSystem targetingSystem;
+    public TargetingSystem TargetingSystem => targetingSystem;
+
+    [Header("Stage References")]
+    [SerializeField] private Transform actionCenterPoint; 
+    public Vector3 ActionCenterPosition => actionCenterPoint.position;
+    private Camera _camera;
+    public Camera BattleCamera => _camera;
     
     [Header("Audio")]
     [SerializeField] private AudioClip battleBGM;
@@ -20,11 +27,6 @@ public class BattleManager : Singleton<BattleManager>
     [SerializeField] private AudioClip battleDefeat;
     [SerializeField] private AudioClip startSound;
 
-    [Header("Stage References")]
-    [SerializeField] private Transform actionCenterPoint; 
-    public Vector3 ActionCenterPosition => actionCenterPoint.position;
-    private Camera _camera;
-    public Camera BattleCamera => _camera;
 
     [Header("Entrance Sequence")]
     [SerializeField] private Transform[] heroSpawnPoints;

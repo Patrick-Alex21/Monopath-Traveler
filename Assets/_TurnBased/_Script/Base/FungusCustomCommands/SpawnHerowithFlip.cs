@@ -4,9 +4,9 @@ using Fungus.DentedPixel;
 namespace Fungus
 {
     [CommandInfo("GameObject", 
-                "Spawn Hero With Flip", 
+                "Spawn Character With Flip", 
                 "Spawn Object/Prefab to Scene with Position, Sprite override, and Flip options.")]
-    public class SpawnHeroWithFlip : Command
+    public class SpawnCharacterWithFlip : Command
     {
         [Tooltip("Prefab or Object to Spawn")]
         [SerializeField] private GameObject sourceObject;
@@ -32,10 +32,11 @@ namespace Fungus
         [Tooltip("Optional: Make the new object a child of this Transform")]
         [SerializeField] private Transform parentTransform;
 
-        [Header("Hero Data")]
-        [SerializeField] private ScriptableHero heroData;
+        [Header("Character Data (Optional - Body only, leave empty for pure props)")]
+        [Tooltip("Works for Hero or Enemy data. Only used as a fallback sprite source, and only if Custom Sprite above is empty.")]
+        [SerializeField] private ScriptableBaseCharacter characterData;
 
-        [Header("NPC Data")]
+        [Header("NPC Data (Optional - Mind, required if this NPC should be interactable)")]
         [Tooltip("Masukkan ScriptableNPC agar NPC yang di-spawn punya data dialog/interaksi")]
         [SerializeField] private ScriptableNPC npcData;
         
@@ -79,9 +80,9 @@ namespace Fungus
                 {
                     spawnedSpriteRenderer.sprite = customSprite;
                 }
-                else if (heroData != null && heroData.DefaultSprite != null)
+                else if (characterData != null && characterData.DefaultSprite != null)
                 {
-                    spawnedSpriteRenderer.sprite = heroData.DefaultSprite;
+                    spawnedSpriteRenderer.sprite = characterData.DefaultSprite;
                 }
 
                 // Apply flip settings
@@ -99,7 +100,7 @@ namespace Fungus
             string extraInfo = "";
             
             if (customSprite != null) extraInfo += $" [Sprite: {customSprite.name}]";
-            else if (heroData != null) extraInfo += $" [{heroData.name}]";
+            else if (characterData != null) extraInfo += $" [{characterData.name}]";
             
             if (flipX) extraInfo += " [Flip X]";
             if (flipY) extraInfo += " [Flip Y]";

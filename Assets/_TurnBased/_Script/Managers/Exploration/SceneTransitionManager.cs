@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class SceneTransitionManager : PersistentSingleton<SceneTransitionManager>
 {
+
     [Header("Scene Names")]
     [SerializeField] private string battleSceneName = "BattleScene";
     [SerializeField] private string startSceneName  = "StartScene";
@@ -26,7 +28,8 @@ public class SceneTransitionManager : PersistentSingleton<SceneTransitionManager
 
     [Header("Loading Screen UI (Exploration only)")]
     [SerializeField] private CanvasGroup loadingPanelGroup;
-    [SerializeField] private float minLoadingTime = 3.0f;
+    [SerializeField] private float minLoadingTime = 3.0f;   
+    public static event Action OnBeforeFadeIn;
     public string lastSceneBeforeBattle;
     public Vector3 lastPlayerPosition;
     public bool isReturningFromBattle = false;
@@ -141,6 +144,9 @@ public class SceneTransitionManager : PersistentSingleton<SceneTransitionManager
         _preloadedSceneName = null;
 
         if (useLoadingScreen) SetLoadingVisible(false);
+
+        OnBeforeFadeIn?.Invoke();
+        yield return null;
 
         if (fadePanel != null)
         {

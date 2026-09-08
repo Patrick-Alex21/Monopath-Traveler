@@ -728,9 +728,6 @@ GameObject:
   - component: {fileID: 367243188}
   - component: {fileID: 367243189}
   - component: {fileID: 367243190}
-  - component: {fileID: 367243191}
-  - component: {fileID: 367243192}
-  - component: {fileID: 367243193}
   - component: {fileID: 367243194}
   - component: {fileID: 367243195}
   - component: {fileID: 367243198}
@@ -748,13 +745,15 @@ GameObject:
   - component: {fileID: 367243209}
   - component: {fileID: 367243210}
   - component: {fileID: 367243213}
-  - component: {fileID: 367243214}
   - component: {fileID: 367243215}
   - component: {fileID: 367243220}
   - component: {fileID: 367243217}
   - component: {fileID: 367243216}
   - component: {fileID: 367243219}
   - component: {fileID: 367243218}
+  - component: {fileID: 367243223}
+  - component: {fileID: 367243222}
+  - component: {fileID: 367243221}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -802,11 +801,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243172}
-  selectedCommands:
-  - {fileID: 367243190}
-  variables:
-  - {fileID: 367243214}
+  - {fileID: 367243187}
+  selectedCommands: []
+  variables: []
   description: 
   stepPause: 0
   colorCommands: 1
@@ -859,9 +856,9 @@ MonoBehaviour:
   commandList:
   - {fileID: 367243189}
   - {fileID: 367243190}
-  - {fileID: 367243191}
-  - {fileID: 367243193}
-  - {fileID: 367243192}
+  - {fileID: 367243223}
+  - {fileID: 367243221}
+  - {fileID: 367243222}
   - {fileID: 367243207}
   - {fileID: 367243206}
   - {fileID: 367243176}
@@ -1080,7 +1077,7 @@ MonoBehaviour:
   flipX: 1
   flipY: 0
   parentTransform: {fileID: 0}
-  heroData: {fileID: 11400000, guid: bcef63a8d99a01d44bb831ccdf5e08e6, type: 2}
+  characterData: {fileID: 0}
   npcData: {fileID: 0}
 --- !u!114 &367243190
 MonoBehaviour:
@@ -1103,71 +1100,8 @@ MonoBehaviour:
   flipX: 1
   flipY: 0
   parentTransform: {fileID: 0}
-  heroData: {fileID: 11400000, guid: c432f4de4bbfc8a4e9e4f40271770794, type: 2}
+  characterData: {fileID: 0}
   npcData: {fileID: 0}
---- !u!114 &367243191
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367243166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671524a0cff80bf4a814445e7a4cd4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnObjectWithFlip
-  itemId: 21
-  indentLevel: 0
-  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
-  spawnAtTransform: {fileID: 202062513}
-  customPosition: {x: 0, y: 0, z: 0}
-  flipX: 1
-  flipY: 0
-  parentTransform: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: 647e8b1606cd10a4288bf7fd7a782d41, type: 2}
---- !u!114 &367243192
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367243166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671524a0cff80bf4a814445e7a4cd4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnObjectWithFlip
-  itemId: 22
-  indentLevel: 0
-  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
-  spawnAtTransform: {fileID: 742701143}
-  customPosition: {x: 0, y: 0, z: 0}
-  flipX: 1
-  flipY: 0
-  parentTransform: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: 647e8b1606cd10a4288bf7fd7a782d41, type: 2}
---- !u!114 &367243193
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367243166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671524a0cff80bf4a814445e7a4cd4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnObjectWithFlip
-  itemId: 23
-  indentLevel: 0
-  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
-  spawnAtTransform: {fileID: 959917868}
-  customPosition: {x: 0, y: 0, z: 0}
-  flipX: 1
-  flipY: 0
-  parentTransform: {fileID: 0}
-  enemyData: {fileID: 11400000, guid: b20e3b772d1ccce48af9e3b4c03d7264, type: 2}
 --- !u!114 &367243194
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1189,7 +1123,7 @@ MonoBehaviour:
   flipX: 1
   flipY: 0
   parentTransform: {fileID: 0}
-  heroData: {fileID: 11400000, guid: c432f4de4bbfc8a4e9e4f40271770794, type: 2}
+  characterData: {fileID: 0}
   npcData: {fileID: 11400000, guid: 1db332e10ee5c324d9c5cf3e4e159a97, type: 2}
 --- !u!114 &367243195
 MonoBehaviour:
@@ -1212,7 +1146,7 @@ MonoBehaviour:
   flipX: 1
   flipY: 0
   parentTransform: {fileID: 0}
-  heroData: {fileID: 11400000, guid: bcef63a8d99a01d44bb831ccdf5e08e6, type: 2}
+  characterData: {fileID: 0}
   npcData: {fileID: 11400000, guid: 2e0ec43288abdff49bdd695619c533ff, type: 2}
 --- !u!114 &367243196
 MonoBehaviour:
@@ -1589,21 +1523,6 @@ MonoBehaviour:
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
---- !u!114 &367243214
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367243166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 705fa1ac97df74e3a84ff952ffd923f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Fungus::Fungus.FloatVariable
-  scope: 1
-  key: VARIABELTOLO
-  value: 0
 --- !u!114 &367243215
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1769,6 +1688,75 @@ MonoBehaviour:
   - {fileID: 367243219}
   - {fileID: 367243218}
   suppressAllAutoSelections: 0
+--- !u!114 &367243221
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8180fac74db749959d9e61bc3d890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnCharacterWithFlip
+  itemId: 52
+  indentLevel: 0
+  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
+  spawnAtTransform: {fileID: 959917868}
+  customPosition: {x: 0, y: 0, z: 0}
+  customSprite: {fileID: 0}
+  flipX: 1
+  flipY: 0
+  parentTransform: {fileID: 0}
+  characterData: {fileID: 11400000, guid: b20e3b772d1ccce48af9e3b4c03d7264, type: 2}
+  npcData: {fileID: 0}
+--- !u!114 &367243222
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8180fac74db749959d9e61bc3d890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnCharacterWithFlip
+  itemId: 51
+  indentLevel: 0
+  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
+  spawnAtTransform: {fileID: 742701143}
+  customPosition: {x: 0, y: 0, z: 0}
+  customSprite: {fileID: 0}
+  flipX: 1
+  flipY: 0
+  parentTransform: {fileID: 0}
+  characterData: {fileID: 11400000, guid: 647e8b1606cd10a4288bf7fd7a782d41, type: 2}
+  npcData: {fileID: 0}
+--- !u!114 &367243223
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8180fac74db749959d9e61bc3d890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnHeroWithFlip
+  itemId: 50
+  indentLevel: 0
+  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
+  spawnAtTransform: {fileID: 202062513}
+  customPosition: {x: 0, y: 0, z: 0}
+  customSprite: {fileID: 0}
+  flipX: 1
+  flipY: 0
+  parentTransform: {fileID: 0}
+  characterData: {fileID: 11400000, guid: 647e8b1606cd10a4288bf7fd7a782d41, type: 2}
+  npcData: {fileID: 0}
 --- !u!1 &388912010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,7 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoPlayCutscene
   eventFlag: {fileID: 11400000, guid: bbb067de8055b42469bcca685a6913b7, type: 2}
-  prerequisiteFlag: {fileID: 0}
+  prerequisiteFlag: {fileID: 11400000, guid: bbb067de8055b42469bcca685a6913b7, type: 2}
   flowchart: {fileID: 367243170}
   blockName: EncounterParty
 --- !u!1 &679787301

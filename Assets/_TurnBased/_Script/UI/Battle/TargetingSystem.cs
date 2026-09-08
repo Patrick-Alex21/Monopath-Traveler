@@ -14,7 +14,6 @@ public class TargetingSystem : MonoBehaviour
     [Header("Visuals (Action Menu Mode)")]
     [SerializeField] private GameObject arrowIndicatorPrefab; 
     private GameObject currentArrow;
-
     private Renderer[] _arrowRenderers;
     
     [Header("Target Data")]
@@ -25,7 +24,8 @@ public class TargetingSystem : MonoBehaviour
 
     [Header("Targeting Audio")]
     [SerializeField] private AudioClip confirmTargetSound;
-
+    [SerializeField] private Vector3 arrowFallbackOffset = new Vector3(0, 1.3f, 0);
+    
     private PlayerInputAction _actions;
     private int currentTargetIndex = 0;
     private bool isTargeting = false;
@@ -268,10 +268,11 @@ public class TargetingSystem : MonoBehaviour
         OnTargetCanceled?.Invoke();
     }
 
-        private void ConfirmTarget()
+    private void ConfirmTarget()
     {
-        CharacterBase selectedEnemy = CharacterManager.Instance.ActiveEnemies[currentTargetIndex];
-        OnTargetConfirmed?.Invoke(selectedEnemy); 
+        var enemies = CharacterManager.Instance.ActiveEnemies;
+        if (currentTargetIndex < 0 || currentTargetIndex >= enemies.Count) return;
+        OnTargetConfirmed?.Invoke(enemies[currentTargetIndex]);
     }
 
     private void ChangeTarget(int direction)

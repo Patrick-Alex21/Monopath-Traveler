@@ -644,11 +644,11 @@ GameObject:
   - component: {fileID: 367243190}
   - component: {fileID: 367243196}
   - component: {fileID: 367243197}
-  - component: {fileID: 367243198}
   - component: {fileID: 367243199}
   - component: {fileID: 367243200}
   - component: {fileID: 367243201}
   - component: {fileID: 367243202}
+  - component: {fileID: 367243203}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -696,9 +696,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243184}
+  - {fileID: 367243175}
   selectedCommands:
-  - {fileID: 367243197}
+  - {fileID: 367243191}
   variables: []
   description: 
   stepPause: 0
@@ -764,7 +764,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 367243192}
   - {fileID: 367243200}
-  - {fileID: 367243198}
+  - {fileID: 367243203}
   - {fileID: 367243191}
   - {fileID: 367243190}
   - {fileID: 367243174}
@@ -984,27 +984,6 @@ MonoBehaviour:
   itemId: 25
   indentLevel: 0
   targetSceneName: EncounterPartyScene
---- !u!114 &367243198
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367243166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 671524a0cff80bf4a814445e7a4cd4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpawnObjectWithFlip
-  itemId: 26
-  indentLevel: 0
-  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
-  spawnAtTransform: {fileID: 1941319676}
-  customPosition: {x: 0, y: 0, z: 0}
-  flipX: 1
-  flipY: 0
-  parentTransform: {fileID: 1941319676}
-  enemyData: {fileID: 11400000, guid: b20e3b772d1ccce48af9e3b4c03d7264, type: 2}
 --- !u!114 &367243199
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1079,6 +1058,29 @@ MonoBehaviour:
   duration: 1
   magnitude: 0.2
   waitUntilFinished: 1
+--- !u!114 &367243203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367243166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd8180fac74db749959d9e61bc3d890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fungus.SpawnCharacterWithFlip
+  itemId: 32
+  indentLevel: 0
+  sourceObject: {fileID: 2222682872435404747, guid: 34e13c87035394a459109b44158e6bd5, type: 3}
+  spawnAtTransform: {fileID: 332847725}
+  customPosition: {x: 0, y: 0, z: 0}
+  customSprite: {fileID: 0}
+  flipX: 1
+  flipY: 0
+  parentTransform: {fileID: 0}
+  characterData: {fileID: 11400000, guid: b20e3b772d1ccce48af9e3b4c03d7264, type: 2}
+  npcData: {fileID: 0}
 --- !u!1 &388912010
 GameObject:
   m_ObjectHideFlags: 0

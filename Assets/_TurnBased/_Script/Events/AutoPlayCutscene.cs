@@ -1,67 +1,29 @@
- using UnityEngine;
-using Fungus;
+using UnityEngine;
 using System.Collections;
+using Fungus;
 
-public class AutoPlayCutscene : MonoBehaviour
+public class AutoPlayCutscene : CutsceneRunnerBase
 {
-    [Header("Event Data")]
-    [SerializeField] private GameEventFlag eventFlag;
-    
-    [Header("Syarat / Prerequisite (Opsional)")]
-    [SerializeField] private GameEventFlag prerequisiteFlag; 
+    private void OnEnable() => SceneTransitionManager.OnBeforeFadeIn += SpawnDuringBlackScreen;
+    private void OnDisable() => SceneTransitionManager.OnBeforeFadeIn -= SpawnDuringBlackScreen;
 
-    [Header("Fungus Settings")]
-    [SerializeField] private Flowchart flowchart;
-    [SerializeField] private string blockName;
+    private void SpawnDuringBlackScreen()
+    {
+        if (!CanPlay()) return;
+        if (flowchart != null && flowchart.HasBlock("SetupScene"))
+            flowchart.ExecuteBlock("SetupScene"); // instant, no waits inside, runs while still black
+    }
 
     private IEnumerator Start()
     {
-        if (ProgressManager.Instance == null) yield break;
-        
-        if (prerequisiteFlag != null && !ProgressManager.Instance.IsEventCompleted(prerequisiteFlag))
-        {
-            Destroy(gameObject);
-            yield break;
-        }
-        if (eventFlag != null && ProgressManager.Instance.IsEventCompleted(eventFlag))
-        {
-            Destroy(gameObject);
-            yield break; 
-        }
+        if (!CanPlay()) { Destroy(gameObject); yield break; }
 
         if (SceneTransitionManager.Instance != null)
-        {
             yield return new WaitUntil(() => !SceneTransitionManager.Instance.isTransitioning);
-        }
-        else 
-        {
+        else
             yield return new WaitForSeconds(0.5f);
-        }
 
-        if (flowchart != null && flowchart.HasBlock(blockName))
-        {
-            GameManager.Instance.ChangeState(GameState.InDialog);
-
-            if (eventFlag != null) ProgressManager.Instance.StartEvent(eventFlag);
-            
-            flowchart.ExecuteBlock(blockName);
-            
-            
-            StartCoroutine(WaitForBlockEnd());
-        }
-    }
-
-    private IEnumerator WaitForBlockEnd()
-    {
-        yield return new WaitForSeconds(0.2f);
-        yield return new WaitUntil(() => flowchart.HasExecutingBlocks());
-        yield return new WaitUntil(() => !flowchart.HasExecutingBlocks());
-
-        if (GameManager.Instance.State != GameState.InBattle)
-        {
-            GameManager.Instance.ChangeState(GameState.Exploring);
-        }
-        
-        Destroy(gameObject);
+        if (flowchart != null && flowchart.HasBlock(blockName)) // blockName = "TalkNPCs"
+            yield return StartCoroutine(RunCutscene());
     }
 }
