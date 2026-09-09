@@ -36,8 +36,8 @@ public class EnemyHealthBar : MonoBehaviour
     {
         if (_character != null)
         {
-            
             _character.OnHealthChanged += UpdateBar;
+            UpdateBar(_character.currentHp, _character.Stats.maxHp);
         }
     }
 
@@ -45,9 +45,7 @@ public class EnemyHealthBar : MonoBehaviour
     {
         if (_character != null)
         {
-            
             _character.OnHealthChanged -= UpdateBar;
-            UpdateBar(_character.currentHp, _character.Stats.maxHp);
         }
     }
 
