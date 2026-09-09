@@ -42,7 +42,7 @@ public class BattleResultUI : MonoBehaviour
     {
         
         if (SceneTransitionManager.Instance != null)
-            SceneTransitionManager.Instance.ReturnFromBattle();
+            SceneTransitionManager.Instance.TransitionToMainMenu();
     }
 
     private static void SetPanelVisible(CanvasGroup cg, bool visible)

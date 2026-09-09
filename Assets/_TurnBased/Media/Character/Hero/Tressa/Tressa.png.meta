@@ -391,7 +391,7 @@ TextureImporter:
         width: 46
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,6 +400,28 @@ TextureImporter:
       bones: []
       spriteID: cbbf819afa3bbe84981108caaedfc9ac
       internalID: 760542893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tressa_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 88
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d7ec341fbfd2b4dbbe3d8cb6262dd2
+      internalID: -1962024242
       vertices: []
       indices: 
       edges: []

@@ -20,4 +20,11 @@ public class TurnIconVisual : MonoBehaviour
             frameImage.sprite = character is HeroCharBase ? heroFrame : enemyFrame;
         }
     }
+
+    public void SetDimmed(bool dimmed)
+    {
+        Color c = dimmed ? new Color(1f, 1f, 1f, 0.4f) : Color.white;
+        if (portraitImage != null) portraitImage.color = c;
+        if (frameImage != null) frameImage.color = c;
+    }
 } 

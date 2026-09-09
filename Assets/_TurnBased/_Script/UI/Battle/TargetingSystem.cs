@@ -25,8 +25,7 @@ public class TargetingSystem : MonoBehaviour
     [Header("Targeting Audio")]
     [SerializeField] private AudioClip confirmTargetSound;
     [SerializeField] private Vector3 arrowFallbackOffset = new Vector3(0, 1.3f, 0);
-    
-    private PlayerInputAction _actions;
+
     private int currentTargetIndex = 0;
     private bool isTargeting = false;
     private Camera mainCam;
@@ -35,37 +34,26 @@ public class TargetingSystem : MonoBehaviour
 
     private void Awake()
     {
-        _actions = new PlayerInputAction();
         mainCam = Camera.main; 
     }
 
     private void OnEnable()
     {
-        _actions.Battle.Targeting.performed += OnTargetingPerformed;
-        _actions.Battle.Submit.performed += OnSubmitPerformed;
-        _actions.Battle.Cancel.performed += OnCancelPerformed;
+        BattleInputActions.Actions.Battle.Targeting.performed += OnTargetingPerformed;
+        BattleInputActions.Actions.Battle.Submit.performed += OnSubmitPerformed;
+        BattleInputActions.Actions.Battle.Cancel.performed += OnCancelPerformed;
     }
 
     private void OnDisable()
     {
-        if (_actions != null)
+        if (BattleInputActions.Actions != null)
         {
-            _actions.Battle.Targeting.performed -= OnTargetingPerformed;
-            _actions.Battle.Submit.performed -= OnSubmitPerformed;
-            _actions.Battle.Cancel.performed -= OnCancelPerformed;
-            _actions.Battle.Disable();
+            BattleInputActions.Actions.Battle.Targeting.performed -= OnTargetingPerformed;
+            BattleInputActions.Actions.Battle.Submit.performed -= OnSubmitPerformed;
+            BattleInputActions.Actions.Battle.Cancel.performed -= OnCancelPerformed;
         }
     }
-
-    private void OnDestroy()
-    {
-        if (_actions != null)
-        {
-            _actions.Battle.Disable();
-            _actions.Dispose();
-        }
-    }
-
+    
     private void Update()
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -197,8 +185,8 @@ public class TargetingSystem : MonoBehaviour
             currentArrow.transform.SetParent(enemy.transform, false);
 
             TargetIndicator indicator = currentArrow.GetComponent<TargetIndicator>();
-            if (indicator != null) indicator.SetPivot(new Vector3(0, 1.3f, 0)); 
-            else currentArrow.transform.localPosition = new Vector3(0, 1.3f, 0);
+            if (indicator != null) indicator.SetPivot(arrowFallbackOffset); 
+            else currentArrow.transform.localPosition = arrowFallbackOffset;
         }
 
         if (hideTimerCoroutine != null) StopCoroutine(hideTimerCoroutine);
@@ -207,7 +195,7 @@ public class TargetingSystem : MonoBehaviour
 
     public void StartTargeting(CharacterBase previousTarget = null)
     {
-        _actions.Battle.Enable(); 
+        BattleInputActions.Actions.Battle.Enable(); 
         isTargeting = true;
 
         if (hideTimerCoroutine != null) StopCoroutine(hideTimerCoroutine);
@@ -239,7 +227,7 @@ public class TargetingSystem : MonoBehaviour
 
         ClearAllHighlights();
         SetArrowVisible(false);
-        _actions.Battle.Disable(); 
+        BattleInputActions.Actions.Battle.Disable();
     }
 
     public CharacterBase GetCurrentTarget()

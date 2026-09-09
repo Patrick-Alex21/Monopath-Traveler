@@ -1530,7 +1530,7 @@ Transform:
   m_GameObject: {fileID: 414351046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7200012, y: 0.89, z: -2.4699993}
+  m_LocalPosition: {x: 2.7200012, y: 0.38, z: -2.4699993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4378,7 +4378,7 @@ Transform:
   m_GameObject: {fileID: 1196813118}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7200012, y: 0.89, z: -0.45}
+  m_LocalPosition: {x: 1.7200012, y: 0.38, z: -0.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4849,11 +4849,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleManager
   targetingSystem: {fileID: 1353474446}
+  actionCenterPoint: {fileID: 1916727117}
   battleBGM: {fileID: 8300000, guid: 59a64ba55936092428822b09719c2efd, type: 3}
   battleVictory: {fileID: 8300000, guid: 122a52d81181ff44d88f50a949b4ef41, type: 3}
   battleDefeat: {fileID: 8300000, guid: 5757aae824c9c1444862b266ac9bd685, type: 3}
   startSound: {fileID: 8300000, guid: 127d431cae3254848b5f81ad9e8a9d56, type: 3}
-  actionCenterPoint: {fileID: 1916727117}
   heroSpawnPoints:
   - {fileID: 1928713713}
   - {fileID: 1529324930}
@@ -4879,6 +4879,7 @@ MonoBehaviour:
   currentTarget: {fileID: 0}
   autoHideDelay: 2
   confirmTargetSound: {fileID: 8300000, guid: 79733280fae82434483bfede07991ad2, type: 3}
+  arrowFallbackOffset: {x: 0, y: 1.3, z: 0}
   blockWorldClick: 0
 --- !u!114 &1358761339 stripped
 MonoBehaviour:
@@ -7134,7 +7135,7 @@ Transform:
   m_GameObject: {fileID: 2138308053}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.72, y: 0.89, z: 1.53}
+  m_LocalPosition: {x: 0.72, y: 0.38, z: 1.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

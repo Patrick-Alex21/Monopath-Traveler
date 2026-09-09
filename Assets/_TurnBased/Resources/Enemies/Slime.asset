@@ -18,7 +18,7 @@ MonoBehaviour:
     maxHp: 200
     maxSp: 0
     Attack: 12
-    speed: 29
+    speed: 25
   Description: 
   MenuSprite: {fileID: -297955049, guid: 92a376b8f18372c44b59b4f626af1674, type: 3}
   animatorOverride: {fileID: 22100000, guid: 528b8bb2d1c2ead4ba83afde92631f74, type: 2}

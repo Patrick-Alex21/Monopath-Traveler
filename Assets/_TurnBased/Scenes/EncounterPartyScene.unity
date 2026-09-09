@@ -789,11 +789,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 14.915073, y: -40.68071}
+  scrollPos: {x: 353.37085, y: -37.46379}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 579
-  zoom: 0.85000014
+  zoom: 1
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -801,8 +801,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243187}
-  selectedCommands: []
+  - {fileID: 367243172}
+  selectedCommands:
+  - {fileID: 367243189}
   variables: []
   description: 
   stepPause: 0
@@ -1096,7 +1097,7 @@ MonoBehaviour:
   sourceObject: {fileID: 1280787349078759831, guid: 3a6414d42fc121f4daef930724540506, type: 3}
   spawnAtTransform: {fileID: 1555299773}
   customPosition: {x: 0, y: 0, z: 0}
-  customSprite: {fileID: 0}
+  customSprite: {fileID: 85561460, guid: 7a209d6013a742e4db6cea3ca75db4bc, type: 3}
   flipX: 1
   flipY: 0
   parentTransform: {fileID: 0}
@@ -2132,9 +2133,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutoPlayCutscene
   eventFlag: {fileID: 11400000, guid: bbb067de8055b42469bcca685a6913b7, type: 2}
-  prerequisiteFlag: {fileID: 11400000, guid: bbb067de8055b42469bcca685a6913b7, type: 2}
+  prerequisiteFlag: {fileID: 0}
   flowchart: {fileID: 367243170}
   blockName: EncounterParty
+--- !u!1 &669243535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 669243536}
+  m_Layer: 0
+  m_Name: StartPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &669243536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669243535}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.819, y: 1.31, z: 0.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1738785507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &679787301
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3467,7 @@ Transform:
   m_GameObject: {fileID: 1163137423}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16018224, y: -0.000000018181021, z: 0.0000000029503733, w: 0.98708755}
-  m_LocalPosition: {x: -34.86321, y: 11.09, z: -13.6}
+  m_LocalPosition: {x: -34.86321, y: 11.44, z: -13.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3863,7 +3895,7 @@ Transform:
   m_GameObject: {fileID: 1318347861}
   serializedVersion: 2
   m_LocalRotation: {x: 0.16018227, y: -0.000000018181025, z: 0.0000000029503742, w: 0.9870875}
-  m_LocalPosition: {x: -15.612883, y: 11.09, z: -13.599999}
+  m_LocalPosition: {x: -15.612883, y: 11.44, z: -13.599999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4782,7 +4814,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 94891327}
-  - {fileID: 2008226433}
+  - {fileID: 669243536}
   - {fileID: 1555299773}
   - {fileID: 1759349746}
   - {fileID: 202062513}
@@ -5417,37 +5449,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &2008226432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2008226433}
-  m_Layer: 0
-  m_Name: Meteor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2008226433
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008226432}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.3, y: 1.31, z: 0.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1738785507}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2058530909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5712,7 +5713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2790762118946967365, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.09
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 2790762118946967365, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5747,6 +5748,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5997836136610990113, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5997836136610990113, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
       propertyPath: m_Size.x
       value: 2.75
       objectReference: {fileID: 0}
@@ -5766,6 +5771,10 @@ PrefabInstance:
       propertyPath: nameText
       value: Alfyn
       objectReference: {fileID: 0}
+    - target: {fileID: 8968981354314867903, guid: 54e2c7912e141364f91d991c11d2cf59, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 10020d5d9c7ae3b4d841e6ffa049dd7e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

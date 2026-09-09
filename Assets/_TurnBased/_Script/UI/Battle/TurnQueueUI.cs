@@ -19,6 +19,8 @@ public class TurnQueueUI : MonoBehaviour
     [SerializeField] private float nextTurnStartX = 500f;
     [SerializeField] private float slideDuration = 0.3f;
 
+    
+
     private readonly List<TurnIconSlot> _queue = new List<TurnIconSlot>();
     private bool _isExecuting = false;
 
@@ -30,7 +32,7 @@ public class TurnQueueUI : MonoBehaviour
 
     private bool _hasBuiltOnce = false;
 
-    public void BuildQueue(List<CharacterBase> currentRound, List<CharacterBase> nextRoundPreview)
+    public void BuildQueue(List<CharacterBase> currentRound)
     {
         ClearQueue();
         _isExecuting = false;
@@ -99,19 +101,28 @@ public class TurnQueueUI : MonoBehaviour
         }
     }
 
-    public void AdvanceTurn(CharacterBase actingCharacter)
+    public void SkipTurn(CharacterBase character)
     {
-        TurnIconSlot actingSlot = _queue.FirstOrDefault(s => s.character == actingCharacter);
-        if (actingSlot == null) return;
+        TurnIconSlot slot = _queue.FirstOrDefault(s => s.character == character);
+        if (slot == null) return;
 
-        _queue.Remove(actingSlot);
+        TurnIconVisual visual = slot.rect.GetComponent<TurnIconVisual>();
+        if (visual != null) visual.SetDimmed(true);
+    }
 
-        LeanTween.moveX(actingSlot.rect, -slotSpacing, slideDuration);
-        LeanTween.scale(actingSlot.rect, Vector3.zero, slideDuration)
+    public void RemoveFromQueue(CharacterBase character)
+    {
+        TurnIconSlot slot = _queue.FirstOrDefault(s => s.character == character);
+        if (slot == null) return;
+
+        _queue.Remove(slot);
+
+        LeanTween.moveX(slot.rect, -slotSpacing, slideDuration);
+        LeanTween.scale(slot.rect, Vector3.zero, slideDuration)
             .setOnComplete(() =>
             {
-                if (actingSlot.rect != null)
-                    Destroy(actingSlot.rect.gameObject);
+                if (slot.rect != null)
+                    Destroy(slot.rect.gameObject);
             });
 
         for (int i = 0; i < _queue.Count; i++)

@@ -118,8 +118,13 @@ public class BattleManager : Singleton<BattleManager>
 
         if (isVictory) 
         {
+            foreach (var hero in CharacterManager.Instance.HeroesPhysics)
+            {
+                var heroData = hero.CharacterData as ScriptableHero;
+                if (heroData != null)
+                    GameManager.Instance.SaveHeroState(heroData.heroType, hero.currentHp, hero.currentSp);
+            }
             BattleUIManager.Instance.ShowVictoryScreen();
-            if (battleVictory != null) AudioSystem.Instance.PlayMusic(battleVictory);
         }
         else 
         {
@@ -235,8 +240,7 @@ public class BattleManager : Singleton<BattleManager>
 
         _currentTurnOrder = currentRound;
 
-        List<CharacterBase> nextRound = new List<CharacterBase>(currentRound);
-        BattleUIManager.Instance.BuildTurnQueue(currentRound, nextRound);
+        BattleUIManager.Instance.BuildTurnQueue(currentRound);
 
         foreach (HeroCharBase hero in activeHeroes)
         {
@@ -272,22 +276,25 @@ public class BattleManager : Singleton<BattleManager>
         foreach (CharacterBase character in turnQueue)
         {
             if (State == BattleState.Victory || State == BattleState.Defeat)
-            {
-                yield break;
-            }
+            yield break;
 
             if (character == null || character.currentHp <= 0 || !character.gameObject.activeInHierarchy) 
             {
                 continue;
             }
 
+            // if (character.IsStunned)
+            // {
+            //     BattleUIManager.Instance.SkipTurnQueue(character);
+            //     yield return new WaitForSeconds(0.5f);
+            //     continue;
+            // }
+
             bool isActionDone = false;
             if (character is HeroCharBase hero) hero.ExecuteMove(() => isActionDone = true);
             else if (character is EnemyBase enemy) enemy.ExecuteTurn(() => isActionDone = true);
 
             yield return new WaitUntil(() => isActionDone);
-
-            BattleUIManager.Instance.AdvanceTurnQueue(character);
 
             yield return new WaitForSeconds(0.5f);
         }

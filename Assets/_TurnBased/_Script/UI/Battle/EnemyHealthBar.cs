@@ -21,11 +21,7 @@ public class EnemyHealthBar : MonoBehaviour
         _canvas = GetComponent<Canvas>();
         
         _weaknessIcon = GetComponent<EnemyWeaknessUI>();
-        
-    
-    
-    
-    
+
     }
 
     private void Start()
@@ -51,6 +47,7 @@ public class EnemyHealthBar : MonoBehaviour
         {
             
             _character.OnHealthChanged -= UpdateBar;
+            UpdateBar(_character.currentHp, _character.Stats.maxHp);
         }
     }
 

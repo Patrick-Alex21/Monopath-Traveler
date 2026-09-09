@@ -15,7 +15,7 @@ MonoBehaviour:
   DefaultSprite: {fileID: 816798196, guid: a0c7cb1aed3f3c44a8efa4e50202cb76, type: 3}
   characterType: 0
   _stats:
-    maxHp: 130
+    maxHp: 30
     maxSp: 80
     Attack: 22
     speed: 22

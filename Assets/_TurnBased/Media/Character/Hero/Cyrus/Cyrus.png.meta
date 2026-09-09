@@ -1,0 +1,660 @@
+fileFormatVersion: 2
+guid: 7a209d6013a742e4db6cea3ca75db4bc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_117
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 132
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed0146c26ab70c4eb34ce03062d7801
+      internalID: -1354151354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_118
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 132
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bb34e3af0178949a58a51f8ae7eb80
+      internalID: -1256756370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2267e5100fc24429d2820f8e0ca473
+      internalID: 85561460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_121
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 88
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb5463c952258f4eb3ed9610e4d705c
+      internalID: 690380054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_122
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 88
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b5143897c3c6e4cba154a0fb8ee872
+      internalID: 1867579678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_123
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 88
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52da247b72804643b826689ac74eb4c
+      internalID: 278234728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df56e2d5c8143bc4f8886a9e69364149
+      internalID: -451098160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_130
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edacf4611a3fb784fa0f0024b592f883
+      internalID: -943022625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_131
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 132
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77cd06037e244d94c8e2f84f5e0e3d6c
+      internalID: 1609503701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_132
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 132
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcfaab7f6bda5a349820f59457c01c4b
+      internalID: -1085942455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_133
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 44
+        width: 87
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12c4e0089e0e994fac428b33b3f3146
+      internalID: 1753106556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_134
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 44
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39477fa9f2bf9544b8e98afe9bfffa17
+      internalID: -1255450130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_137
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 44
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27766800634a313439aa82493d3ba97c
+      internalID: 1658284416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce4ba6505a42db644ab7b13d632c882f
+      internalID: -1353712741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_142
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 0
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fcde1dcddb1a1a41a330752b152527c
+      internalID: -502735006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_144
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc28b5abe4990f3439462583217236d7
+      internalID: 1242409562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters
+        - Cyrus_146
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 88
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d4efb945449a748a9b6fe780a51099
+      internalID: 1710435274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 7b4b70e3e2d824c4aaab991ffe488184
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":10.0,"y":15.0},"gridSpriteSize":{"x":44.0,"y":44.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_0: -1040846146
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_1: 1680118331
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_10: 1723967287
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_100: 666827647
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_101: -1167678386
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_102: -223605830
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_103: 685289554
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_104: 209049565
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_105: 1328022449
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_106: 551388909
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_107: 915516842
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_108: -101632501
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_109: -426125341
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_11: -12968435
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_110: -1072315930
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_111: 347167745
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_112: 2042506783
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_113: -1922679516
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_114: 1008713137
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_115: 238728851
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_116: -1959803277
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_117: -1354151354
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_118: -1256756370
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_119: -630987875
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_12: -953636072
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_120: 85561460
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_121: 690380054
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_122: 1867579678
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_123: 278234728
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_124: -451098160
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_125: -1700993465
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_126: -1898297308
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_127: -77861527
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_128: 605722419
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_129: 853387119
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_13: -1554422689
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_130: -943022625
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_131: 1609503701
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_132: -1085942455
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_133: 1753106556
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_134: -1255450130
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_135: 1462357568
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_136: 1711792244
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_137: 1658284416
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_138: -842542966
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_139: -1309372882
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_14: -586834549
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_140: -1353712741
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_141: 1620055926
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_142: -502735006
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_143: -152142429
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_144: 1242409562
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_145: 853505636
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_146: 1710435274
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_147: -1805457038
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_148: -910241539
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_149: 1257109504
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_15: -1858502474
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_16: 211990394
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_17: 533874980
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_18: 168029390
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_19: -659585700
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_2: -827813210
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_20: -299662611
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_21: -577445578
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_22: 1029825929
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_23: -653805344
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_24: -711424581
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_25: 198029584
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_26: 8098124
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_27: -2107578589
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_28: 1572397012
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_29: 553972092
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_3: -2014521257
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_30: 2015679305
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_31: -2136860062
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_32: 1707820088
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_33: 841339934
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_34: -1026803316
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_35: -2013007343
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_36: 1628429920
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_37: 2086675850
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_38: 957903652
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_39: -1219254183
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_4: -1802761023
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_40: -1854141948
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_41: -844792923
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_42: -949285531
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_43: 290630563
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_44: 623116899
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_45: 1492414756
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_46: -2023891109
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_47: 1138673907
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_48: 989038418
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_49: -1099002076
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_5: -954425335
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_50: 841710246
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_51: -1115350569
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_52: 1527756162
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_53: 985869063
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_54: -1534440702
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_55: -1058454208
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_56: -1455859082
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_57: 472140914
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_58: -46969807
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_59: -1342431596
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_6: 763007273
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_60: 1243637934
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_61: -1145662499
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_62: -718951403
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_63: -981054949
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_64: -1149935667
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_65: -210857241
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_66: 345223630
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_67: 1439364646
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_68: -749325447
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_69: -1839325391
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_7: 454879926
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_70: 1626533833
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_71: 980297593
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_72: -1272572905
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_73: 1983659993
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_74: -1178462641
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_75: 922568358
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_76: -704954478
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_77: -59631480
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_78: -1966047644
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_79: -2054798008
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_8: -1048722594
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_80: 1321544482
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_81: -483258627
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_82: 358325696
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_83: -783689468
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_84: 582465060
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_85: -1640737712
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_86: -903708409
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_87: -1931543520
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_88: 832221981
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_89: 1939391181
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_9: 656502111
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_90: -1270258901
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_91: 709257304
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_92: 2101336930
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_93: 715866148
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_94: 871099558
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_95: 2132457941
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_96: 232736907
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_97: 324249424
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_98: -1424574692
+      Mobile - Octopath Traveler_ Champions of the Continent - Playable Characters - Cyrus_99: -152680743
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

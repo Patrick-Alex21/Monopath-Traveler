@@ -8,6 +8,7 @@ public class CharacterBase : MonoBehaviour, IDamageable
     public Stats Stats { get; private set; }
     public event Action<int, int> OnHealthChanged;
     public event Action<int, int> OnSpChanged;
+    public event Action<CharacterBase> OnDeath;
     public ScriptableBaseCharacter CharacterData { get; private set; }
     
     [Header("Current Status")]
@@ -73,6 +74,14 @@ public class CharacterBase : MonoBehaviour, IDamageable
         OnSpChanged?.Invoke(currentSp, Stats.maxSp);
     }
 
+    public void RestoreState(int hp, int sp)
+    {
+        currentHp = Mathf.Clamp(hp, 0, Stats.maxHp);
+        currentSp = Mathf.Clamp(sp, 0, Stats.maxSp);
+        OnHealthChanged?.Invoke(currentHp, Stats.maxHp);
+        OnSpChanged?.Invoke(currentSp, Stats.maxSp);
+    }
+
     private IEnumerator UpdateColliderSize()
     {
         yield return new WaitForEndOfFrame(); 
@@ -122,8 +131,10 @@ public class CharacterBase : MonoBehaviour, IDamageable
         currentHp -= damage;
         if (currentHp < 0) currentHp = 0;
         
-
         OnHealthChanged?.Invoke(currentHp, Stats.maxHp);
+
+        if (currentHp <= 0)
+            OnDeath?.Invoke(this);
 
         if (_damageFeedback != null)
         {

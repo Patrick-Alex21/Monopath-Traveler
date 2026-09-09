@@ -38,16 +38,20 @@ public class CharacterManager : Singleton<CharacterManager>
         }
     }
 
-    private HeroCharBase SpawnHeroUnit(HeroType t, Transform slot) 
+    private HeroCharBase SpawnHeroUnit(HeroType t, Transform slot)
     {
         var data = ResourceSystem.Instance.GetHero(t);
         var spawned = Instantiate(data.Prefab, slot.position, Quaternion.identity, slot);
-        
-        spawned.InitUnitData(data); 
-        
+
+        spawned.InitUnitData(data);
+        spawned.OnDeath += (c) => BattleUIManager.Instance.RemoveFromTurnQueue(c);
+
+        if (GameManager.Instance.TryGetHeroState(t, out int hp, out int sp))
+            spawned.RestoreState(hp, sp);
+
         ActiveHeroes.Add(spawned);
         HeroesPhysics.Add(spawned);
-        
+
         return spawned;
     }
     public void SpawnEnemies()
@@ -81,7 +85,8 @@ public class CharacterManager : Singleton<CharacterManager>
         var data = ResourceSystem.Instance.GetEnemy(t);
         var spawned = Instantiate(data.Prefab, slot.position, Quaternion.identity, slot);
         
-        spawned.InitUnitData(data); 
+        spawned.InitUnitData(data);
+        spawned.OnDeath += (c) => BattleUIManager.Instance.RemoveFromTurnQueue(c);
         
         spawned.SetElementalAffinities(data.weaknesses, data.resistances); 
         

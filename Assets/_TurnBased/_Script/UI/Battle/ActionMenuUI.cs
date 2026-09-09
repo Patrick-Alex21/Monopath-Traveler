@@ -55,9 +55,11 @@ public class ActionMenuUI : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
+        if (selectAllyPanel != null) selectAllyPanel.OnCancelRequested += CancelAllySelection;
+
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        _actions = new PlayerInputAction();
+        
         
         rectTransform.anchoredPosition = hiddenPosition;
         canvasGroup.alpha = 0f;
@@ -68,8 +70,8 @@ public class ActionMenuUI : MonoBehaviour
             _originalContentX = _dynamicContentRect.anchoredPosition.x;
     }
 
-    private void OnEnable() => _actions.Battle.Boost.performed += OnBoostPerformed;
-    private void OnDisable() => _actions.Battle.Boost.performed -= OnBoostPerformed;
+    private void OnEnable() => BattleInputActions.Actions.Battle.Boost.performed += OnBoostPerformed;
+    private void OnDisable() => BattleInputActions.Actions.Battle.Boost.performed -= OnBoostPerformed;
  
     public void OpenMenuForHero(ScriptableHero hero, HeroStatUI sourcePanel)
     {
@@ -106,7 +108,7 @@ public class ActionMenuUI : MonoBehaviour
 
     public void OpenMenu()
     {
-        _actions.Battle.Enable();
+        BattleInputActions.Actions.Battle.Enable();
         isMenuActive = true;
         SyncBoostStateFromHero();
 
@@ -122,7 +124,7 @@ public class ActionMenuUI : MonoBehaviour
 
     public void CloseMenu()
     {
-        _actions.Battle.Disable(); 
+        BattleInputActions.Actions.Battle.Disable(); 
         isMenuActive = false;
 
         if (BattleManager.Instance != null)
@@ -339,6 +341,16 @@ public class ActionMenuUI : MonoBehaviour
     {
         return skill != null &&
             (skill.skillCategory == SkillCategory.Recovery ||  skill.skillCategory == SkillCategory.Augment);
+    }
+
+    private void CancelAllySelection()
+    {
+        if (!isMenuActive) return;
+
+        SetAllySelectionMode(false);
+        selectedSkill = null;
+
+        if (casterPanel != null) casterPanel.SetHighlighted(false);
     }
 
     private void OnBoostPerformed(InputAction.CallbackContext ctx)

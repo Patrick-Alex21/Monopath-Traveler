@@ -1,10 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleUIManager : MonoBehaviour
+public class BattleUIManager : Singleton<BattleUIManager>
 {
-    public static BattleUIManager Instance;
-
     [Header("Menu Panels")]
     [SerializeField] private ActionMenuUI actionMenuPanel; 
     [SerializeField] private CommandButtonUI commandButtonPanel; 
@@ -16,11 +14,6 @@ public class BattleUIManager : MonoBehaviour
 
     [Header("UI Transition Settings (Fade)")]
     [SerializeField] private CanvasGroup[] battleUIGroups;
-
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-    }
 
     public void SetupPartyUI(List<ScriptableHero> partyData, List<HeroCharBase> physicalUnits)
     {
@@ -38,14 +31,19 @@ public class BattleUIManager : MonoBehaviour
         }
     }
 
-    public void BuildTurnQueue(List<CharacterBase> currentRound, List<CharacterBase> nextRound)
+    public void BuildTurnQueue(List<CharacterBase> currentRound)
     {
-        if (turnQueueUI != null) turnQueueUI.BuildQueue(currentRound, nextRound);
+        if (turnQueueUI != null) turnQueueUI.BuildQueue(currentRound);
     }
 
-    public void AdvanceTurnQueue(CharacterBase actingCharacter)
+    public void SkipTurnQueue(CharacterBase character)
     {
-        if (turnQueueUI != null) turnQueueUI.AdvanceTurn(actingCharacter);
+        if (turnQueueUI != null) turnQueueUI.SkipTurn(character);
+    }
+
+    public void RemoveFromTurnQueue(CharacterBase character)
+    {
+        if (turnQueueUI != null) turnQueueUI.RemoveFromQueue(character);
     }
 
     public void BeginExecutionQueueVisual()
