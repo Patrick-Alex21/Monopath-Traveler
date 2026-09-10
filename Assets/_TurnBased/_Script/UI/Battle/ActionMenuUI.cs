@@ -99,7 +99,8 @@ public class ActionMenuUI : MonoBehaviour
         SyncBoostStateFromHero();
 
         ScriptableSkill currentSkill = CurrentHeroUnit.CurrentIntent.ChosenSkill;
-        if (!IsFriendlyTargetSkill(currentSkill) && BattleManager.Instance != null)
+        bool needsSingleTarget = currentSkill != null && !IsFriendlyTargetSkill(currentSkill) && currentSkill.targetScope == TargetScope.Single;
+        if (needsSingleTarget && BattleManager.Instance != null)
             BattleManager.Instance.StartTargetingForHero(CurrentHeroUnit);
 
         StopAllCoroutines();
@@ -232,13 +233,11 @@ public class ActionMenuUI : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(buttonToSelect);
                 buttonToSelect.GetComponent<Button>().Select();
-                HighlightSelectedButton(buttonToSelect.GetComponent<Button>()); 
             }
             else if (firstSelectedButton != null)
             {
                 EventSystem.current.SetSelectedGameObject(firstSelectedButton);
                 firstSelectedButton.GetComponent<Button>().Select(); 
-                HighlightSelectedButton(firstSelectedButton.GetComponent<Button>());
                 
                 if (firstAffordableSkill != null)
                 {
@@ -268,8 +267,6 @@ public class ActionMenuUI : MonoBehaviour
             if (clickedSkill.targetScope == TargetScope.Self)
                 CurrentHeroUnit.CurrentIntent.AllyTarget = CurrentHeroUnit;
         }
-
-        HighlightSelectedButton(clickedButton);
 
         if (IsFriendlyTargetSkill(clickedSkill))
         {
@@ -406,16 +403,6 @@ public class ActionMenuUI : MonoBehaviour
         if (casterPanel != null) casterPanel.UpdateBoostVisual();
     }
 
-    private void HighlightSelectedButton(Button selectedBtn)
-    {
-        foreach (Button btn in _activeSkillButtons)
-        {
-            if (btn == null) continue;
-            ColorBlock cb = btn.colors;
-            cb.normalColor = (btn == selectedBtn) ? cb.selectedColor : Color.white;
-            btn.colors = cb;
-        }
-    }
 
     private void SetCommandHolderInteractable(bool interactable)
     {

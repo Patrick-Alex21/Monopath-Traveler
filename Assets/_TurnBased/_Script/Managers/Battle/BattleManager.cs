@@ -251,6 +251,9 @@ public class BattleManager : Singleton<BattleManager>
         BattleUIManager.Instance.ShowAllForTransition();
         BattleUIManager.Instance.RefreshAllBoostVisuals();
         BattleUIManager.Instance.ShowCommandPanel(); 
+
+        if (targetingSystem != null)
+            targetingSystem.StartTargeting(null, false);
     }
 
     public void ExecuteAllHeroesActions()
@@ -331,7 +334,7 @@ public class BattleManager : Singleton<BattleManager>
         ChangeState(BattleState.SelectTarget); 
 
         BattleUIManager.Instance.HideCommandPanel();
-        targetingSystem.StartTargeting(_heroBeingPlanned.CurrentIntent.Target);      
+        targetingSystem.StartTargeting(null, true, false);
     }
 
     public void StopTargetingFromMenu()
@@ -342,7 +345,7 @@ public class BattleManager : Singleton<BattleManager>
             ApplyTargetToAllHeroes(targetingSystem.GetCurrentTarget());
 
         if (targetingSystem != null)
-            targetingSystem.StopTargeting();
+            targetingSystem.StartTargeting(null, false, true);
 
         State = BattleState.HeroTurn;
         BattleUIManager.Instance.ShowCommandPanel();

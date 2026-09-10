@@ -8,6 +8,10 @@ public class TurnIconVisual : MonoBehaviour
     [SerializeField] private Sprite heroFrame;
     [SerializeField] private Sprite enemyFrame;
 
+    [Header("Frame Colors")]
+    [SerializeField] private Color heroFrameColor = new Color(0.55f, 0.75f, 1f, 1f);
+    [SerializeField] private Color enemyFrameColor = new Color(1f, 0.45f, 0.45f, 1f);
+
     public void Setup(CharacterBase character)
     {
         if (character == null || character.CharacterData == null) return;
@@ -18,6 +22,7 @@ public class TurnIconVisual : MonoBehaviour
         if (frameImage != null)
         {
             frameImage.sprite = character is HeroCharBase ? heroFrame : enemyFrame;
+            frameImage.color = character is HeroCharBase ? heroFrameColor : enemyFrameColor;
         }
     }
 

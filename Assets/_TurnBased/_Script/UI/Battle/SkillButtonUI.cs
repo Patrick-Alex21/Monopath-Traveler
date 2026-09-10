@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 //ISelectHandler if use selectable navigation (keyboard/controller) to show description box on select
 
 [RequireComponent(typeof(Button))]
-public class SkillButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDeselectHandler
+public class SkillButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDeselectHandler, ISelectHandler
 {
     [Header("Skill Info")]
     [SerializeField] private TextMeshProUGUI typeText;
@@ -144,10 +144,10 @@ public class SkillButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         SetDescriptionVisible(false);
     }
 
-    // public void OnSelect(BaseEventData eventData)
-    // {
-    //     // if (mySkill != null) SetDescriptionVisible(true);
-    // }
+    public void OnSelect(BaseEventData eventData)
+    {
+        if (mySkill != null) SetDescriptionVisible(true);
+    }
 
     public void OnDeselect(BaseEventData eventData)
     {

@@ -148,10 +148,11 @@ public class HeroStatUI : MonoBehaviour
 
         if (ActionMenuUI.Instance != null)
         {
+            bool wasAlreadyOpenForThisHero = ActionMenuUI.Instance.CurrentHero == myHero;
             ActionMenuUI.Instance.OpenMenuForHero(myHero, this);
+            if (!wasAlreadyOpenForThisHero)
+                heroChar.PlayVoice(VoiceType.MyTurn);
         }
-
-        heroChar.PlayVoice(VoiceType.MyTurn);
     }
 
     private void UpdateHPVisuals(int currentHp, int maxHp)
