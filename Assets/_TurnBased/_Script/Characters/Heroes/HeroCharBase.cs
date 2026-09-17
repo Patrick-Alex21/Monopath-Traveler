@@ -6,7 +6,7 @@ using System;
 public class HeroCharBase : CharacterBase
 {
     [Header("Combat Planning")]
-    [SerializeField] private ActionIntent currentIntent = new ActionIntent();
+    [SerializeField] private HeroActionIntent currentIntent = new HeroActionIntent();
     [SerializeField] private ScriptableSkill _basicAttackSkill;
     public ScriptableSkill BasicAttackSkill => _basicAttackSkill;
     private ScriptableHeroVoice _voice;
@@ -27,8 +27,7 @@ public class HeroCharBase : CharacterBase
         set => allocatedBoost = value;
     }
 
-    public ActionIntent CurrentIntent => currentIntent;
-
+    public HeroActionIntent CurrentIntent => currentIntent;
 
     private void Start()
     {
@@ -92,7 +91,7 @@ public class HeroCharBase : CharacterBase
 
     private IEnumerator AttackSequenceCoroutine(Action onComplete)
     {
-        ScriptableSkill skill = CurrentIntent.ChosenSkill;
+        ScriptableSkill skill = currentIntent.ChosenSkill;
         if (skill == null) skill = _basicAttackSkill;
 
         if (skill != null && skill.spCost > 0) ConsumeSP(skill.spCost);

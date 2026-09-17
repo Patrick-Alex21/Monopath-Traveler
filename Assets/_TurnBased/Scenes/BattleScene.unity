@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 253632773}
   - component: {fileID: 253632775}
   - component: {fileID: 253632776}
+  - component: {fileID: 253632777}
   m_Layer: 5
   m_Name: SelectAllyFade
   m_TagString: Untagged
@@ -991,6 +992,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09102091d62b84a42a3097a2f8d20d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectAllyUI
+  backdropImage: {fileID: 253632773}
+--- !u!114 &253632777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253632771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 0}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 253632773}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 253632776}
+        m_TargetAssemblyTypeName: SelectAllyUI, Assembly-CSharp
+        m_MethodName: RequestCancel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &263531385
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,9 +4936,9 @@ MonoBehaviour:
   arrowIndicatorPrefab: {fileID: 7845216640710321140, guid: af13251729320234c9b2a824a8f7bc21, type: 3}
   currentTarget: {fileID: 0}
   autoHideDelay: 2
+  blockWorldClick: 0
   confirmTargetSound: {fileID: 8300000, guid: 79733280fae82434483bfede07991ad2, type: 3}
   arrowFallbackOffset: {x: 0, y: 1.3, z: 0}
-  blockWorldClick: 0
 --- !u!114 &1358761339 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8314330913831688827, guid: 051921e73650704438a4ef6a3a8f7c56, type: 3}
