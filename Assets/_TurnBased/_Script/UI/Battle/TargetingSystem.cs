@@ -28,7 +28,6 @@ public class TargetingSystem : MonoBehaviour
 
     private int currentTargetIndex = 0;
     private bool isTargeting = false;
-    private bool autoHideEnabled = true;
     private Camera mainCam;
     private Coroutine hideTimerCoroutine;
     public bool blockWorldClick = false;
@@ -135,18 +134,11 @@ public class TargetingSystem : MonoBehaviour
                 {
                     int clickedIndex = CharacterManager.Instance.ActiveEnemies.IndexOf(clickedEnemy);
 
-                    if (clickedIndex == currentTargetIndex)
-                    {
-                        SetArrowVisible(true);
-                        ResetHideTimer();
-                        ConfirmTarget();
-                    }
+                    if (clickedIndex == currentTargetIndex) ConfirmTarget();
                     else
                     {
                         currentTargetIndex = clickedIndex;
                         UpdateHighlight();
-                        SetArrowVisible(true);
-                        ResetHideTimer();
                     }
                 }
                 else
@@ -201,32 +193,26 @@ public class TargetingSystem : MonoBehaviour
         hideTimerCoroutine = StartCoroutine(HideCursorRoutine());
     }
 
-    public void StartTargeting(CharacterBase previousTarget = null, bool showImmediately = true, bool autoHide = true)
+    public void StartTargeting(CharacterBase previousTarget = null)
     {
         BattleInputActions.Actions.Battle.Enable(); 
         isTargeting = true;
-        autoHideEnabled = autoHide;
 
         if (hideTimerCoroutine != null) StopCoroutine(hideTimerCoroutine);
 
         EnsureArrowExists();
 
-        if (previousTarget != null && CharacterManager.Instance.ActiveEnemies.Contains(previousTarget))
-        {
-            currentTargetIndex = CharacterManager.Instance.ActiveEnemies.IndexOf(previousTarget);
-        }
-        else if (currentTargetIndex < 0 || currentTargetIndex >= CharacterManager.Instance.ActiveEnemies.Count)
-        {
-            currentTargetIndex = 0;
-        }
-        // else: keep existing currentTargetIndex so reopening the menu doesn't reset the cursor
+        CharacterBase targetToUse = previousTarget;
+        if (targetToUse == null && currentTarget != null)
+            targetToUse = currentTarget.GetComponent<CharacterBase>();
 
-        if (showImmediately)
-        {
-            SetArrowVisible(true);
-            UpdateHighlight();
-            ResetHideTimer();
-        }
+        if (targetToUse != null && CharacterManager.Instance.ActiveEnemies.Contains(targetToUse))
+            currentTargetIndex = CharacterManager.Instance.ActiveEnemies.IndexOf(targetToUse);
+        else
+            currentTargetIndex = 0;
+
+        SetArrowVisible(true);
+        UpdateHighlight();
     }
 
     public void StopTargeting()
@@ -287,14 +273,6 @@ public class TargetingSystem : MonoBehaviour
         if (currentTargetIndex < 0) currentTargetIndex = enemyCount - 1;
 
         SetEnemyHighlight(currentTargetIndex, true);
-        SetArrowVisible(true);
-        ResetHideTimer();
-    }
-
-    private void ResetHideTimer()
-    {
-        if (hideTimerCoroutine != null) StopCoroutine(hideTimerCoroutine);
-        hideTimerCoroutine = autoHideEnabled ? StartCoroutine(HideCursorRoutine()) : null;
     }
 
     private void UpdateHighlight()
@@ -332,7 +310,6 @@ public class TargetingSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(autoHideDelay);
         SetArrowVisible(false);
-        SetEnemyHighlight(currentTargetIndex, false);
 
         if (currentTarget != null)
         {
