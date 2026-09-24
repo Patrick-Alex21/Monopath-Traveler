@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class ActionIntent
+public class HeroActionIntent
 {
+    [Header("Action Target Data")]
     public ScriptableSkill ChosenSkill;
     public CharacterBase Target;
     public HeroCharBase AllyTarget;
