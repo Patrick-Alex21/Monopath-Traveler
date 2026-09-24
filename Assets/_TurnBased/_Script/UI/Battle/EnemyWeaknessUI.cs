@@ -62,8 +62,7 @@ public class EnemyWeaknessUI : MonoBehaviour
     private void RefreshIcons()
     {
         if (_enemy == null) return;
-
-        
+        if (spawnedIcons.Count != _enemy.Weaknesses.Count) return;  
         for (int i = 0; i < _enemy.Weaknesses.Count; i++)
         {
             ScriptableElement currentElement = _enemy.Weaknesses[i];
