@@ -5,7 +5,6 @@ using System;
 
 public class EnemyBase : CharacterBase
 {
-    [Header("Enemy VFX")]
     private List<ScriptableElement> _weaknesses = new List<ScriptableElement>();
     private List<ScriptableElement> _resistances = new List<ScriptableElement>();
     public List<ScriptableElement> DiscoveredWeaknesses { get; private set; } = new List<ScriptableElement>();

@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class NPCBase : MonoBehaviour, IInteractable
 {
-    [Header("NPC References")]
     [SerializeField] private InteractionPromptUI promptUI;
     [SerializeField] private ScriptableNPC _data;
     public ScriptableNPC Data => _data;
