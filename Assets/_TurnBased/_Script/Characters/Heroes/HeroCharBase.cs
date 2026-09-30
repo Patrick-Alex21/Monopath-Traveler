@@ -11,6 +11,9 @@ public class HeroCharBase : CharacterBase
     public ScriptableSkill BasicAttackSkill => _basicAttackSkill;
     private ScriptableHeroVoice _voice;
 
+    [Header("All-Target Damage")]
+    [SerializeField, Range(0f, 1f)] private float allTargetSplashMultiplier = 0.8f;
+
     [Header("Boost State")]
     private int currentBP = 1; 
     private int allocatedBoost = 0;
@@ -135,6 +138,8 @@ public class HeroCharBase : CharacterBase
             if (targetEnemy == null) continue;
             DamageEffectiveness eff;
             int dmg = CalculateDamagePerHit(targetEnemy, skill, out eff);
+            if (skill.targetScope == TargetScope.All && targetEnemy != CurrentIntent.Target)
+                dmg = Mathf.Max(1, Mathf.RoundToInt(dmg * allTargetSplashMultiplier));
             damageData[targetEnemy] = (dmg, eff);
         }
 
@@ -312,6 +317,8 @@ public class HeroCharBase : CharacterBase
                 if (target == null) continue;
                 DamageEffectiveness effectiveness;
                 int damage = CalculateDamagePerHit(target, skill, out effectiveness);
+                if (skill.targetScope == TargetScope.All && target != CurrentIntent.Target)
+                    damage = Mathf.Max(1, Mathf.RoundToInt(damage * allTargetSplashMultiplier));
                 target.TakeDamage(damage, effectiveness);
             }
 

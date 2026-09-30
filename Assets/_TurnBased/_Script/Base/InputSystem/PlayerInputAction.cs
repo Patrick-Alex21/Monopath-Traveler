@@ -850,17 +850,6 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e3cd1be7-9b50-42c2-9767-458fc7222118"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Submit"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""ebddfe21-ff89-44d1-b200-3ad004889d85"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",

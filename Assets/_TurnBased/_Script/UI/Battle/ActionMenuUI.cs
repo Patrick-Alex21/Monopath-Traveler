@@ -106,7 +106,17 @@ public class ActionMenuUI : MonoBehaviour
 
         ScriptableSkill currentSkill = CurrentHeroUnit.CurrentIntent.ChosenSkill;
         if (!IsFriendlyTargetSkill(currentSkill) && BattleManager.Instance != null)
-            BattleManager.Instance.StartTargetingForHero(CurrentHeroUnit);
+        {
+            if (currentSkill != null && currentSkill.targetScope == TargetScope.All)
+            {
+                BattleManager.Instance.StopTargetingWithoutApplyingTarget();
+                BattleManager.Instance.TargetingSystem.ShowAllTargetIndicators();
+            }
+            else
+            {
+                BattleManager.Instance.StartTargetingForHero(CurrentHeroUnit);
+            }
+        }
 
         StopAllCoroutines();
         StartCoroutine(SetupAndShowMenuCoroutine());
@@ -135,6 +145,9 @@ public class ActionMenuUI : MonoBehaviour
 
         if (BattleManager.Instance != null)
             BattleManager.Instance.StopTargetingFromMenu();
+
+        if (BattleManager.Instance != null && BattleManager.Instance.TargetingSystem != null)
+            BattleManager.Instance.TargetingSystem.HideAllTargetIndicators();
 
         if (casterPanel != null)
         {
@@ -256,6 +269,7 @@ public class ActionMenuUI : MonoBehaviour
             {
                 EventSystem.current.SetSelectedGameObject(firstSelectedButton);
                 firstSelectedButton.GetComponent<Button>().Select(); 
+                HighlightSelectedButton(firstSelectedButton.GetComponent<Button>());
                 
                 if (firstAffordableSkill != null)
                 {
@@ -306,7 +320,12 @@ public class ActionMenuUI : MonoBehaviour
         if (IsFriendlyTargetSkill(clickedSkill))
         {
             if (BattleManager.Instance != null)
+            {
+
+                if (BattleManager.Instance.TargetingSystem != null)
+                    BattleManager.Instance.TargetingSystem.HideAllTargetIndicators();
                 BattleManager.Instance.StopTargetingWithoutApplyingTarget();
+            }
 
             if (clickedSkill.targetScope == TargetScope.Single)
             {
@@ -333,7 +352,7 @@ public class ActionMenuUI : MonoBehaviour
             }
             else
             {
-                if (BattleManager.Instance.State != BattleState.SelectTarget)
+                if (BattleManager.Instance.TargetingSystem == null || !BattleManager.Instance.TargetingSystem.IsTargetingActive)
                 {
                     BattleManager.Instance.StartTargetingForHero(CurrentHeroUnit);
                 }
@@ -385,8 +404,24 @@ public class ActionMenuUI : MonoBehaviour
         lastSelectedSkillButton = preAllySelectButton;
 
         if (CurrentHeroUnit != null)
+        {
             CurrentHeroUnit.CurrentIntent.ChosenSkill = preAllySelectSkill;
-        CurrentHeroUnit.CurrentIntent.AllyTarget = preAllySelectTarget;
+            CurrentHeroUnit.CurrentIntent.AllyTarget = preAllySelectTarget;
+        }
+
+        if (CurrentHeroUnit != null && preAllySelectSkill != null &&
+            !IsFriendlyTargetSkill(preAllySelectSkill) && BattleManager.Instance != null)
+        {
+            if (preAllySelectSkill.targetScope == TargetScope.All)
+            {
+                BattleManager.Instance.StopTargetingWithoutApplyingTarget();
+                BattleManager.Instance.TargetingSystem.ShowAllTargetIndicators();
+            }
+            else
+            {
+                BattleManager.Instance.StartTargetingForHero(CurrentHeroUnit);
+            }
+        }
 
         if (casterPanel != null)
         {

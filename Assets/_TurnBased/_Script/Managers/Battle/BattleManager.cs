@@ -274,6 +274,8 @@ public class BattleManager : Singleton<BattleManager>
 
     public void ExecuteAllHeroesActions()
     {
+        targetingSystem?.HideAllTargetIndicators();
+        
         if (State != BattleState.HeroTurn) return;
 
         if (targetingSystem != null)
@@ -331,7 +333,7 @@ public class BattleManager : Singleton<BattleManager>
         
     private void HandleAttackExecution(CharacterBase targetEnemy)
     {
-        if (State != BattleState.SelectTarget) return;
+        if (State != BattleState.HeroTurn || targetingSystem == null || !targetingSystem.IsTargetingActive) return;
 
         ApplyTargetToAllHeroes(targetEnemy);
 
@@ -346,13 +348,11 @@ public class BattleManager : Singleton<BattleManager>
 
     public void StartTargetingForHero(HeroCharBase hero)
     {
-        if (State != BattleState.HeroTurn && State != BattleState.SelectTarget) return;
+        if (State != BattleState.HeroTurn) return;
 
         _heroBeingPlanned = hero;
         if (_heroBeingPlanned.CurrentIntent.ChosenSkill == null)
             _heroBeingPlanned.CurrentIntent.ChosenSkill = _heroBeingPlanned.BasicAttackSkill;
-
-        ChangeState(BattleState.SelectTarget); 
 
         BattleUIManager.Instance.HideCommandPanel();
         targetingSystem.StartTargeting(_heroBeingPlanned.CurrentIntent.Target);      
@@ -360,9 +360,9 @@ public class BattleManager : Singleton<BattleManager>
 
     public void StopTargetingFromMenu()
     {
-        if (State != BattleState.SelectTarget) return;
+        if (State != BattleState.HeroTurn || targetingSystem == null || !targetingSystem.IsTargetingActive) return;
 
-        if (_heroBeingPlanned != null && targetingSystem != null)
+        if (_heroBeingPlanned != null)
             ApplyTargetToAllHeroes(targetingSystem.GetCurrentTarget());
 
         if (targetingSystem != null)
@@ -374,27 +374,28 @@ public class BattleManager : Singleton<BattleManager>
 
     public void StopTargetingWithoutApplyingTarget()
     {
-        if (State != BattleState.SelectTarget) return;
+        if (State != BattleState.HeroTurn || targetingSystem == null || !targetingSystem.IsTargetingActive) return;
 
-        if (targetingSystem != null)
-            targetingSystem.StopTargeting();
+        targetingSystem.StopTargeting();
 
-        State = BattleState.HeroTurn;
         BattleUIManager.Instance.ShowCommandPanel();
     }
 
     private void HandleCancelTargeting()
     {
-        if (State != BattleState.SelectTarget) return;
+        if (State != BattleState.HeroTurn || targetingSystem == null || !targetingSystem.IsTargetingActive) return;
 
-        if (targetingSystem != null)
-            targetingSystem.StopTargeting();
+        targetingSystem.StopTargeting();
 
-        State = BattleState.HeroTurn;
         BattleUIManager.Instance.CloseActionMenu();
         BattleUIManager.Instance.ShowCommandPanel();
     }
 
+    public void ApplyCurrentMainTarget(CharacterBase targetEnemy)
+    {
+        if (_heroBeingPlanned != null && targetEnemy != null)
+            _heroBeingPlanned.CurrentIntent.Target = targetEnemy;
+    }
     public void ApplyTargetToAllHeroes(CharacterBase targetEnemy)
     {
         if (targetEnemy == null || CharacterManager.Instance.ActiveEnemies == null || !CharacterManager.Instance.ActiveEnemies.Contains(targetEnemy)) return;

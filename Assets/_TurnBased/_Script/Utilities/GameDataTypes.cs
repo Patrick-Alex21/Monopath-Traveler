@@ -16,7 +16,6 @@ public enum BattleState
     SpawningEnemies = 1,
     SpawningHeroes = 2,
     HeroTurn = 3,         
-    SelectTarget = 4,     
     ExecutingTurn = 5,    
     Victory = 8,
     Defeat = 9
