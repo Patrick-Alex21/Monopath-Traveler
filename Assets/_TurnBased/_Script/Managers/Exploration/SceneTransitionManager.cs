@@ -71,7 +71,7 @@ public class SceneTransitionManager : PersistentSingleton<SceneTransitionManager
         isReturningFromBattle = false;
         if (ProgressManager.Instance != null) ProgressManager.Instance.ResetAllProgress();
         _pendingBGM = mainMenuBGM;
-        StartCoroutine(TransitionRoutine(mainMenuScene, GameState.Exploring, true, fadeDurationExploration));
+        StartCoroutine(TransitionRoutine(mainMenuScene, GameState.MainMenu, true, fadeDurationExploration));
     }
 
     public void TransitionToBattle()

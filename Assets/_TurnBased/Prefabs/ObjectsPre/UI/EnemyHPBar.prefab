@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealthBar
   hpFillImage: {fileID: 6439934074349360184}
-  hideWhenFull: 0
+  hideWhenZero: 0
 --- !u!114 &6052860121544806565
 MonoBehaviour:
   m_ObjectHideFlags: 0

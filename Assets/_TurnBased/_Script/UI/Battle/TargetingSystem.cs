@@ -26,6 +26,12 @@ public class TargetingSystem : MonoBehaviour
     [SerializeField] private AudioClip confirmTargetSound;
     [SerializeField] private Vector3 arrowFallbackOffset = new Vector3(0, 1.3f, 0);
 
+    [Header("Dynamic Arrow Size")]
+    [SerializeField] private float arrowHeightGap = 0f;
+    [SerializeField, Min(0.1f)] private float arrowWidthMultiplier = 1.8f;
+    [SerializeField, Min(0.01f)] private float arrowMinWidth = 0.6f;
+    [SerializeField, Min(0.01f)] private float arrowMaxWidth = 4f;
+
     private int currentTargetIndex = 0;
     private bool isTargeting = false;
     private Camera mainCam;
@@ -184,9 +190,7 @@ public class TargetingSystem : MonoBehaviour
             SetArrowVisible(true);
             currentArrow.transform.SetParent(enemy.transform, false);
 
-            TargetIndicator indicator = currentArrow.GetComponent<TargetIndicator>();
-            if (indicator != null) indicator.SetPivot(arrowFallbackOffset); 
-            else currentArrow.transform.localPosition = arrowFallbackOffset;
+            UpdateArrowForTarget(enemy);
         }
 
         if (hideTimerCoroutine != null) StopCoroutine(hideTimerCoroutine);
@@ -300,12 +304,61 @@ public class TargetingSystem : MonoBehaviour
         {
             currentArrow.transform.SetParent(enemy.transform, false);
 
-            TargetIndicator indicator = currentArrow.GetComponent<TargetIndicator>();
-            if (indicator != null) indicator.SetPivot(new Vector3(0, 1.3f, 0)); 
-            else currentArrow.transform.localPosition = new Vector3(0, 1.0f, 0);
+            UpdateArrowForTarget(enemy);
         }
     }
 
+    private void UpdateArrowForTarget(CharacterBase target)
+    {
+        if (target != null) UpdateArrowForTarget(target.gameObject);
+    }
+
+    private void UpdateArrowForTarget(GameObject target)
+    {
+        if (currentArrow == null || target == null) return;
+
+        Renderer targetRenderer = target.GetComponentInChildren<Renderer>();
+        Renderer arrowRenderer = currentArrow.GetComponentInChildren<Renderer>();
+        if (targetRenderer == null || arrowRenderer == null) return;
+
+        Bounds targetBounds = targetRenderer.bounds;
+
+        // Prefer the collider bounds: sprite animation frames can have
+        // different transparent margins and otherwise change the arrow size.
+        Collider targetCollider = target.GetComponentInChildren<Collider>();
+        if (targetCollider != null)
+        {
+            targetBounds = targetCollider.bounds;
+        }
+        else
+        {
+            Collider2D targetCollider2D = target.GetComponentInChildren<Collider2D>();
+            if (targetCollider2D != null)
+                targetBounds = targetCollider2D.bounds;
+        }
+        float desiredWidth = Mathf.Clamp(targetBounds.size.x * arrowWidthMultiplier, arrowMinWidth, arrowMaxWidth);
+
+        // ArrowTargeting uses a 9-sliced SpriteRenderer. Resize its size,
+        // instead of scaling the transform, so the corners keep their shape.
+        SpriteRenderer slicedArrow = currentArrow.GetComponentInChildren<SpriteRenderer>();
+        if (slicedArrow != null && slicedArrow.drawMode != SpriteDrawMode.Simple)
+        {
+            float parentScaleX = Mathf.Max(0.001f, Mathf.Abs(currentArrow.transform.lossyScale.x));
+            Vector2 slicedSize = slicedArrow.size;
+            slicedSize.x = desiredWidth / parentScaleX;
+            slicedArrow.size = slicedSize;
+        }
+        else
+        {
+            float baseWidth = Mathf.Max(0.001f, arrowRenderer.bounds.size.x);
+            Vector3 scale = currentArrow.transform.localScale;
+            scale.x *= desiredWidth / baseWidth;
+            currentArrow.transform.localScale = scale;
+        }
+
+        Vector3 pivot = new Vector3(targetBounds.center.x, targetBounds.max.y + arrowHeightGap, targetBounds.center.z);
+        currentArrow.transform.localPosition = target.transform.InverseTransformPoint(pivot);
+    }
     private IEnumerator HideCursorRoutine()
     {
         yield return new WaitForSeconds(autoHideDelay);

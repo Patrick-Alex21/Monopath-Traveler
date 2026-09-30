@@ -17,16 +17,13 @@ MonoBehaviour:
   hitCount: 0
   description: Heal All Allies for 20 HP
   skillCategory: 3
-  targetScope: 1
+  targetScope: 0
   skillElement: {fileID: 11400000, guid: 4a707aadaa90c104592d39f7da857bd2, type: 2}
   basePower: 20
   playAnimationPerHit: 0
   multiHitInterval: 0.2
   animTrigger: 2
   skillFinishDelay: 0.7
-  attackVA:
-  - {fileID: 8300000, guid: 353c9db025a0c7646a7f500c2322b6cc, type: 3}
-  attackWeaknessVA: {fileID: 0}
   castVfxPrefab: {fileID: 7568505782868795063, guid: fc9179e31f338a34580c281aec328cc9, type: 3}
   castVfxDuration: 0.5
   castSound: {fileID: 0}

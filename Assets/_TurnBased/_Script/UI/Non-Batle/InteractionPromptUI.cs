@@ -12,6 +12,8 @@ public class InteractionPromptUI : MonoBehaviour
     {
         
         canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
         _targetAlpha = 0f;
     }
 

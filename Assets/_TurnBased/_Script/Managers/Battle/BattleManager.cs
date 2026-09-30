@@ -107,7 +107,8 @@ public class BattleManager : Singleton<BattleManager>
 
     private IEnumerator ShowResultUIDelayed(bool isVictory)
     {
-        if (SceneTransitionManager.Instance != null) SceneTransitionManager.Instance.PreloadReturnScene();
+        if (isVictory && SceneTransitionManager.Instance != null)
+            SceneTransitionManager.Instance.PreloadReturnScene();
         
         if (BoostVFXManager.Instance != null) BoostVFXManager.Instance.StopAllEffects();
 

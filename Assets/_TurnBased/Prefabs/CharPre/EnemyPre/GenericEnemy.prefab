@@ -217,7 +217,6 @@ MonoBehaviour:
   attackSlashVfx: {fileID: 2303825140575659940, guid: 2eaec6db6ba6b1e4eb8944777125e8e7, type: 3}
   attackSparkVfx: {fileID: 5024009746357069194, guid: ec3f674830402cc45bce805cf6493db7, type: 3}
   attackNormal: {fileID: 8300000, guid: 2d40a6b3ca83bdd41ae9d902c1d2e19b, type: 3}
-  dissolveDuration: 0.5
 --- !u!114 &2932467950347314984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +351,10 @@ PrefabInstance:
     - target: {fileID: 1914726609170132916, guid: d3b36cec802baae4fbfbcc4c0da6ef6e, type: 3}
       propertyPath: m_Name
       value: EnemyHPBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914726609170132916, guid: d3b36cec802baae4fbfbcc4c0da6ef6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2673923440117550930, guid: d3b36cec802baae4fbfbcc4c0da6ef6e, type: 3}
       propertyPath: m_SizeDelta.x

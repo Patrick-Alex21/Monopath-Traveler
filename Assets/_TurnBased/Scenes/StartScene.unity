@@ -19772,25 +19772,21 @@ PrefabInstance:
       propertyPath: nameText
       value: Zeph
       objectReference: {fileID: 0}
-    - target: {fileID: 5329403834108370108, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5329403834108370108, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 5329403834108370108, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5329403834108370108, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 10.45
-      objectReference: {fileID: 0}
     - target: {fileID: 5735799645377753760, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
       propertyPath: m_Name
       value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257368200177972935, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257368200177972935, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 6257368200177972935, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 8170050323404652127, guid: 306aa802c00ee1840b66c03d1e35f868, type: 3}
       propertyPath: m_LocalPosition.x
