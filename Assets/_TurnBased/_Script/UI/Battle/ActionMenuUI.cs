@@ -48,7 +48,13 @@ public class ActionMenuUI : MonoBehaviour
     private float _originalContentX;
     private bool isMenuActive = false;
     private List<Button> _activeSkillButtons = new List<Button>();
+
+    [Header("Skill Selection")]
     private ScriptableSkill selectedSkill;
+    private Button lastSelectedSkillButton;
+    private ScriptableSkill preAllySelectSkill;
+    private Button preAllySelectButton;
+    private HeroCharBase preAllySelectTarget;
 
     private void Awake()
     {
@@ -155,6 +161,7 @@ public class ActionMenuUI : MonoBehaviour
         firstSelectedButton = null;
         GameObject buttonToSelect = null;
         ScriptableSkill firstAffordableSkill = null;
+        ScriptableSkill buttonToSelectSkill = null;
 
         _activeSkillButtons.Clear();
 
@@ -193,7 +200,11 @@ public class ActionMenuUI : MonoBehaviour
                                 firstSelectedButton = newBtn;
                                 firstAffordableSkill = skill;
                             }
-                            if (skill.skillName == lastIntent) buttonToSelect = newBtn; 
+                            if (skill.skillName == lastIntent)
+                            {
+                                buttonToSelect = newBtn;
+                                buttonToSelectSkill = skill;
+                            }
                         }
 
                         spawnedButtons.Add(btnComp);
@@ -228,21 +239,28 @@ public class ActionMenuUI : MonoBehaviour
             
             EventSystem.current.SetSelectedGameObject(null); 
             
-            if (buttonToSelect != null)
+            if (buttonToSelect != null && buttonToSelectSkill != null)
             {
+                Button button = buttonToSelect.GetComponent<Button>();
+
+                selectedSkill = buttonToSelectSkill;
+                lastSelectedSkillButton = button;
+                CurrentHeroUnit.CurrentIntent.ChosenSkill = buttonToSelectSkill;
+
                 EventSystem.current.SetSelectedGameObject(buttonToSelect);
-                buttonToSelect.GetComponent<Button>().Select();
-                HighlightSelectedButton(buttonToSelect.GetComponent<Button>()); 
+                button.Select();
+
+                HighlightSelectedButton(button);
             }
             else if (firstSelectedButton != null)
             {
                 EventSystem.current.SetSelectedGameObject(firstSelectedButton);
                 firstSelectedButton.GetComponent<Button>().Select(); 
-                HighlightSelectedButton(firstSelectedButton.GetComponent<Button>());
                 
                 if (firstAffordableSkill != null)
                 {
                     selectedSkill = firstAffordableSkill;
+                    lastSelectedSkillButton = firstSelectedButton.GetComponent<Button>();
                     CurrentHeroUnit.CurrentIntent.ChosenSkill = firstAffordableSkill;
                     if (casterPanel != null) casterPanel.SetIntentText(firstAffordableSkill.skillName);
                 }
@@ -252,14 +270,27 @@ public class ActionMenuUI : MonoBehaviour
 
     private void OnSkillClicked(ScriptableSkill clickedSkill, Button clickedButton)
     {
-        if (selectedSkill == clickedSkill)
+        bool isSingleAllySkill = IsFriendlyTargetSkill(clickedSkill) &&
+                                 clickedSkill.targetScope == TargetScope.Single;
+
+        if (selectedSkill == clickedSkill && !isSingleAllySkill)
         {
             if (selectAllyPanel != null) selectAllyPanel.HideAllyPanel();
             CloseMenu();
             return;
         }
 
+        if (isSingleAllySkill)
+        {
+            preAllySelectSkill = this.selectedSkill;
+            preAllySelectButton = lastSelectedSkillButton;
+            preAllySelectTarget = CurrentHeroUnit != null
+                ? CurrentHeroUnit.CurrentIntent.AllyTarget
+                : null;
+        }
+
         this.selectedSkill = clickedSkill;
+        lastSelectedSkillButton = clickedButton;
 
         if (casterPanel != null) casterPanel.SetIntentText(clickedSkill.skillName);
         if (CurrentHeroUnit != null)
@@ -268,6 +299,7 @@ public class ActionMenuUI : MonoBehaviour
             if (clickedSkill.targetScope == TargetScope.Self)
                 CurrentHeroUnit.CurrentIntent.AllyTarget = CurrentHeroUnit;
         }
+        
 
         HighlightSelectedButton(clickedButton);
 
@@ -348,9 +380,39 @@ public class ActionMenuUI : MonoBehaviour
         if (!isMenuActive) return;
 
         SetAllySelectionMode(false);
-        selectedSkill = null;
 
-        if (casterPanel != null) casterPanel.SetHighlighted(false);
+        selectedSkill = preAllySelectSkill;
+        lastSelectedSkillButton = preAllySelectButton;
+
+        if (CurrentHeroUnit != null)
+            CurrentHeroUnit.CurrentIntent.ChosenSkill = preAllySelectSkill;
+        CurrentHeroUnit.CurrentIntent.AllyTarget = preAllySelectTarget;
+
+        if (casterPanel != null)
+        {
+            casterPanel.SetHighlighted(true);
+            if (preAllySelectSkill != null)
+                casterPanel.SetIntentText(preAllySelectSkill.skillName);
+        }
+
+        if (preAllySelectButton != null)
+        {
+            HighlightSelectedButton(preAllySelectButton);
+
+            if (EventSystem.current != null)
+            {
+                EventSystem.current.SetSelectedGameObject(preAllySelectButton.gameObject);
+                preAllySelectButton.Select();
+            }
+        }
+        else
+        {
+            HighlightSelectedButton(null);
+        }
+
+        preAllySelectSkill = null;
+        preAllySelectButton = null;
+        preAllySelectTarget = null;
     }
 
     private void OnBoostPerformed(InputAction.CallbackContext ctx)

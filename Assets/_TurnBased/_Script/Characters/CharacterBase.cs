@@ -74,6 +74,11 @@ public class CharacterBase : MonoBehaviour, IDamageable
         OnSpChanged?.Invoke(currentSp, Stats.maxSp);
     }
 
+    public void SetSpToZero()
+    {
+        currentSp = 0;
+        OnSpChanged?.Invoke(currentSp, Stats.maxSp);
+    }
     public void RestoreState(int hp, int sp)
     {
         currentHp = Mathf.Clamp(hp, 0, Stats.maxHp);

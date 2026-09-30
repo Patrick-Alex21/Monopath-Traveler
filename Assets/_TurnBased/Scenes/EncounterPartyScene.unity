@@ -789,7 +789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 353.37085, y: -37.46379}
+  scrollPos: {x: -149.82922, y: -15.063782}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 317.6
@@ -801,9 +801,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 367243172}
+  - {fileID: 367243187}
   selectedCommands:
-  - {fileID: 367243223}
+  - {fileID: 367243195}
   variables: []
   description: 
   stepPause: 0
@@ -1016,8 +1016,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Fungus::Fungus.Block
   nodeRect:
     serializedVersion: 2
-    x: 417.75507
-    y: 177.0256
+    x: 416.95508
+    y: 175.42561
     width: 108.512
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -1121,7 +1121,7 @@ MonoBehaviour:
   spawnAtTransform: {fileID: 524767785}
   customPosition: {x: 0, y: 0, z: 0}
   customSprite: {fileID: -451098160, guid: 7a209d6013a742e4db6cea3ca75db4bc, type: 3}
-  flipX: 1
+  flipX: 0
   flipY: 0
   parentTransform: {fileID: 0}
   characterData: {fileID: 0}
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   spawnAtTransform: {fileID: 2114159751}
   customPosition: {x: 0, y: 0, z: 0}
   customSprite: {fileID: -1538528932, guid: a0c7cb1aed3f3c44a8efa4e50202cb76, type: 3}
-  flipX: 1
+  flipX: 0
   flipY: 0
   parentTransform: {fileID: 0}
   characterData: {fileID: 0}
@@ -1868,7 +1868,7 @@ Transform:
   m_GameObject: {fileID: 524767784}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.28, y: 1.33, z: -1.55}
+  m_LocalPosition: {x: 8.09, y: 1.33, z: -1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5640,7 +5640,7 @@ Transform:
   m_GameObject: {fileID: 2114159750}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16999817, y: 1.33, z: 1.2300043}
+  m_LocalPosition: {x: 6.9799995, y: 1.33, z: 1.2300043}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

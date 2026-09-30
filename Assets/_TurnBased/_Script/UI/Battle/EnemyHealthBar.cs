@@ -1,3 +1,4 @@
+using Fungus.DentedPixel;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,7 +55,9 @@ public class EnemyHealthBar : MonoBehaviour
         if (hpFillImage == null || maxHp <= 0) return;
 
         float healthPercentage = (float)currentHp / maxHp;
-        hpFillImage.fillAmount = healthPercentage;
+        LeanTween.cancel(hpFillImage.gameObject);
+        LeanTween.value(hpFillImage.gameObject, hpFillImage.fillAmount, healthPercentage, 0.25f)
+            .setOnUpdate((float value) => hpFillImage.fillAmount = value);
 
         
         if (healthPercentage > 0.5f) 

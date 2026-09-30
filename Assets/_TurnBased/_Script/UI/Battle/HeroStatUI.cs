@@ -1,3 +1,4 @@
+using Fungus.DentedPixel;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -163,7 +164,9 @@ public class HeroStatUI : MonoBehaviour
         if (hpFillImage != null)
         {
             float pct = (float)currentHp / maxHp; 
-            hpFillImage.fillAmount = pct; 
+            LeanTween.cancel(hpFillImage.gameObject);
+            LeanTween.value(hpFillImage.gameObject, hpFillImage.fillAmount, pct, 0.25f)
+                .setOnUpdate((float value) => hpFillImage.fillAmount = value); 
             
             if(pct > 0.5f)  hpFillImage.color = Color.green; 
             else if (pct > 0.25f) hpFillImage.color = new Color(0.8f, 0.7f, 0f); 
@@ -174,6 +177,12 @@ public class HeroStatUI : MonoBehaviour
     private void UpdateSPVisuals(int currentSp, int maxSp)
     {
         if (spText != null) spText.text = currentSp.ToString(); 
-        if (spFillImage != null) spFillImage.fillAmount = (float)currentSp / maxSp; 
+        if (spFillImage != null)
+        {
+            float target = maxSp > 0 ? (float)currentSp / maxSp : 0f;
+            LeanTween.cancel(spFillImage.gameObject);
+            LeanTween.value(spFillImage.gameObject, spFillImage.fillAmount, target, 0.25f)
+                .setOnUpdate((float value) => spFillImage.fillAmount = value);
+        } 
     }
 }

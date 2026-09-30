@@ -11,7 +11,7 @@ public class TurnQueueUI : MonoBehaviour
     [SerializeField] private GameObject turnIconPrefab;
 
     [Header("Layout")]
-    [SerializeField] private float slotSpacing = 60f;
+    [SerializeField] private float slotSpacing = 100f;
     [SerializeField] private float smallScale = 0.6f;
     [SerializeField] private float bigScale = 1f;
 
@@ -39,14 +39,18 @@ public class TurnQueueUI : MonoBehaviour
 
         if (currentRound == null) return;
 
+        int slotIndex = 0;
         for (int i = 0; i < currentRound.Count; i++)
         {
-            if (currentRound[i] == null) continue;
+            CharacterBase character = currentRound[i];
+            if (character == null) continue;
 
             if (_hasBuiltOnce)
-                SpawnIcon(currentRound[i], i);
+                SpawnIcon(character, slotIndex);
             else
-                SpawnIconInstant(currentRound[i], i);
+                SpawnIconInstant(character, slotIndex);
+
+            slotIndex++;
         }
 
         _hasBuiltOnce = true;
@@ -97,7 +101,12 @@ public class TurnQueueUI : MonoBehaviour
     {
         for (int i = 0; i < _queue.Count; i++)
         {
-            LeanTween.scale(_queue[i].rect, Vector3.one * ScaleForSlot(i), slideDuration);
+            RectTransform rect = _queue[i].rect;
+            if (rect == null) continue;
+
+            LeanTween.cancel(rect.gameObject);
+            LeanTween.scale(rect, Vector3.one * ScaleForSlot(i), slideDuration)
+                .setEase(LeanTweenType.easeOutQuad);
         }
     }
 
@@ -142,7 +151,10 @@ public class TurnQueueUI : MonoBehaviour
         foreach (var slot in _queue)
         {
             if (slot.rect != null)
+            {
+                LeanTween.cancel(slot.rect.gameObject);
                 Destroy(slot.rect.gameObject);
+            }
         }
 
         _queue.Clear();

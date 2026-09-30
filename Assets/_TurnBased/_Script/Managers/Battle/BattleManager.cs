@@ -119,12 +119,30 @@ public class BattleManager : Singleton<BattleManager>
 
         if (isVictory) 
         {
-            foreach (var hero in CharacterManager.Instance.HeroesPhysics)
+            // Save every party member. Dead heroes are removed from the
+            // active lists, so they must still receive a persistent state.
+            foreach (HeroType heroType in GameManager.Instance.CurrentParty)
             {
-                var heroData = hero.CharacterData as ScriptableHero;
-                if (heroData != null)
-                    GameManager.Instance.SaveHeroState(heroData.heroType, hero.currentHp, hero.currentSp);
+                HeroCharBase livingHero = null;
+
+                foreach (HeroCharBase hero in CharacterManager.Instance.HeroesPhysics)
+                {
+                    ScriptableHero heroData = hero.CharacterData as ScriptableHero;
+                    if (heroData != null && heroData.heroType == heroType)
+                    {
+                        livingHero = hero;
+                        break;
+                    }
+                }
+
+                if (livingHero != null)
+                    GameManager.Instance.SaveHeroState(heroType, livingHero.currentHp, livingHero.currentSp);
+                else
+                    GameManager.Instance.SaveHeroState(heroType, 1, 0);
             }
+            if (battleVictory != null && AudioSystem.Instance != null)
+                AudioSystem.Instance.PlayMusic(battleVictory);
+
             BattleUIManager.Instance.ShowVictoryScreen();
         }
         else 
@@ -296,6 +314,11 @@ public class BattleManager : Singleton<BattleManager>
             else if (character is EnemyBase enemy) enemy.ExecuteTurn(() => isActionDone = true);
 
             yield return new WaitUntil(() => isActionDone);
+
+            
+            // Advance the queue after this character finishes acting.
+            if (BattleUIManager.Instance != null)
+                BattleUIManager.Instance.RemoveFromTurnQueue(character);
 
             yield return new WaitForSeconds(0.5f);
         }

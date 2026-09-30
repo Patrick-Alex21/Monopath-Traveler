@@ -440,6 +440,12 @@ public class HeroCharBase : CharacterBase
     {
         if (currentHp <= 0)
         {
+            
+            if (BoostVFXManager.Instance != null)
+                BoostVFXManager.Instance.StopHeroEffect(this);
+            ResetBoost();
+            SetSpToZero();
+            
             if (_animator != null)
             {
                 _animator.SetTrigger("Die");
